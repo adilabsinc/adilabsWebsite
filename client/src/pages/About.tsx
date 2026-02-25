@@ -49,7 +49,7 @@ export default function About() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
+      <section className="py-20 bg-gradient-to-br from-sky-50 to-sky-50 dark:from-gray-900 dark:to-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center"
@@ -58,7 +58,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-600 to-sky-500 bg-clip-text text-transparent">
                 About ADILABS INC
               </span>
             </h1>
@@ -81,7 +81,7 @@ export default function About() {
               viewport={{ once: true }}
             >
               <div className="flex items-center mb-6">
-                <Target className="w-8 h-8 text-blue-600 mr-4" />
+                <Target className="w-8 h-8 text-sky-600 mr-4" />
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Our Mission</h2>
               </div>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -98,7 +98,7 @@ export default function About() {
               viewport={{ once: true }}
             >
               <div className="flex items-center mb-6">
-                <Eye className="w-8 h-8 text-purple-600 mr-4" />
+                <Eye className="w-8 h-8 text-sky-600 mr-4" />
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Our Vision</h2>
               </div>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -138,7 +138,7 @@ export default function About() {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-sky-600 to-sky-500 rounded-full flex items-center justify-center mx-auto mb-6">
                   <value.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
@@ -180,7 +180,7 @@ export default function About() {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <div className="w-20 h-20 bg-gradient-to-r from-sky-600 to-sky-500 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-2xl font-bold text-white">
                     {member.name.split(' ').map(n => n[0]).join('')}
                   </span>
@@ -188,7 +188,7 @@ export default function About() {
                 <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
                   {member.name}
                 </h3>
-                <p className="text-blue-600 dark:text-blue-400 font-medium mb-2">
+                <p className="text-sky-600 dark:text-sky-400 font-medium mb-2">
                   {member.role}
                 </p>
                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-1">
@@ -204,7 +204,7 @@ export default function About() {
       </section>
 
       {/* Company Stats */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-sky-600 to-sky-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"

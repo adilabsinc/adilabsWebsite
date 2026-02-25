@@ -91,7 +91,7 @@ export default function Products() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 text-white">
+      <section className="py-20 bg-gradient-to-br from-sky-900 via-sky-800 to-sky-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -100,7 +100,7 @@ export default function Products() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-sky-400 to-sky-300 bg-clip-text text-transparent">
                   Flagship SaaS Platform
                 </span>
               </h1>
@@ -110,7 +110,7 @@ export default function Products() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <motion.button 
-                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center space-x-2"
+                  className="px-8 py-4 bg-gradient-to-r from-sky-600 to-sky-500 rounded-lg font-semibold hover:from-sky-700 hover:to-sky-600 transition-all duration-300 flex items-center justify-center space-x-2"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -149,7 +149,7 @@ export default function Products() {
                       <span className="text-sm">87%</span>
                     </div>
                     <div className="h-2 bg-white/20 rounded-full">
-                      <div className="h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full w-5/6"></div>
+                      <div className="h-2 bg-gradient-to-r from-sky-400 to-sky-300 rounded-full w-5/6"></div>
                     </div>
                     <div className="grid grid-cols-3 gap-4 text-center">
                       <div>
@@ -200,7 +200,7 @@ export default function Products() {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-sky-600 to-sky-500 rounded-lg flex items-center justify-center mb-6">
                   <feature.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
@@ -242,7 +242,7 @@ export default function Products() {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-4">
+                <div className="text-4xl font-bold text-sky-600 dark:text-sky-400 mb-4">
                   {benefit.percentage}
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
@@ -277,7 +277,7 @@ export default function Products() {
             {useCases.map((useCase, index) => (
               <motion.div
                 key={useCase.title}
-                className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl"
+                className="bg-gradient-to-br from-sky-50 to-sky-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -335,10 +335,10 @@ export default function Products() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-sky-600 to-sky-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <step.icon className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-blue-600 dark:text-blue-400 font-semibold mb-2">{step.phase}</div>
+                <div className="text-sky-600 dark:text-sky-400 font-semibold mb-2">{step.phase}</div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{step.title}</h3>
               </motion.div>
             ))}
@@ -347,7 +347,7 @@ export default function Products() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-sky-600 to-sky-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -362,7 +362,7 @@ export default function Products() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
                 <motion.button 
-                  className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center justify-center space-x-2"
+                  className="px-8 py-4 bg-white text-sky-600 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center justify-center space-x-2"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

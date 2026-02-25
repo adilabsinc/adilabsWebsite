@@ -22,10 +22,10 @@ export default function Navigation() {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
+              <div className="w-10 h-10 bg-gradient-to-r from-sky-600 to-sky-500 rounded-lg flex items-center justify-center shadow-lg">
                 <Zap className="w-6 h-6 text-white" />
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold bg-gradient-to-r from-sky-600 to-sky-500 bg-clip-text text-transparent">
                 ADILABS INC
               </span>
             </Link> 
@@ -38,8 +38,8 @@ export default function Navigation() {
                 href={item.path}
                 className={`px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg ${
                   location === item.path
-                    ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-600 dark:border-blue-400 shadow-lg shadow-blue-500/25 dark:shadow-blue-400/25'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-2 hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-md'
+                    ? 'text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-900/20 border-2 border-sky-600 dark:border-sky-400 shadow-lg shadow-sky-500/25 dark:shadow-sky-400/25'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-2 hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-md'
                 }`}
               >
                 {item.name}
@@ -53,7 +53,7 @@ export default function Navigation() {
             </button>
             <Link href="/contact">
               <button
-                className="ml-4 px-8 py-3 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold shadow-lg hover:from-purple-600 hover:to-blue-600 transition-all duration-300 hover:shadow-xl hover:scale-105 text-base"
+                className="ml-4 px-8 py-3 rounded-full bg-gradient-to-r from-sky-500 to-sky-400 text-white font-semibold shadow-lg hover:from-sky-600 hover:to-sky-500 transition-all duration-300 hover:shadow-xl hover:scale-105 text-base"
               >
                 Let's Talk
               </button>
@@ -87,8 +87,8 @@ export default function Navigation() {
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-3 text-lg font-medium transition-all duration-200 rounded-lg ${
                   location === item.path
-                    ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-600 dark:border-blue-400 shadow-md'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                    ? 'text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-900/20 border-2 border-sky-600 dark:border-sky-400 shadow-md'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-gray-50 dark:hover:bg-gray-800'
                 }`}
               >
                 {item.name}

@@ -105,7 +105,7 @@ export default function Contact() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 text-white">
+      <section className="py-20 bg-gradient-to-br from-sky-900 via-sky-800 to-sky-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -113,7 +113,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-400 to-sky-300 bg-clip-text text-transparent">
                 Get In Touch
               </span>
             </h1>
@@ -160,7 +160,7 @@ export default function Contact() {
                     <input
                       type="text"
                       {...register('name')}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                       placeholder="Your full name"
                     />
                     {errors.name && (
@@ -175,7 +175,7 @@ export default function Contact() {
                     <input
                       type="email"
                       {...register('email')}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                       placeholder="your@email.com"
                     />
                     {errors.email && (
@@ -192,7 +192,7 @@ export default function Contact() {
                     <input
                       type="text"
                       {...register('company')}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                       placeholder="Your company name"
                     />
                     {errors.company && (
@@ -207,7 +207,7 @@ export default function Contact() {
                     <input
                       type="tel"
                       {...register('phone')}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
@@ -246,7 +246,7 @@ export default function Contact() {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
+                  className="w-full px-8 py-4 bg-gradient-to-r from-sky-600 to-sky-500 text-white rounded-lg font-semibold hover:from-sky-700 hover:to-sky-600 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
                   whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -284,14 +284,14 @@ export default function Contact() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-r from-sky-600 to-sky-500 rounded-lg flex items-center justify-center flex-shrink-0">
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                         {info.title}
                       </h3>
-                      <p className="text-blue-600 dark:text-blue-400 font-medium mb-1">
+                      <p className="text-sky-600 dark:text-sky-400 font-medium mb-1">
                         {info.details}
                       </p>
                       <p className="text-gray-600 dark:text-gray-400 text-sm">
@@ -308,7 +308,7 @@ export default function Contact() {
                 <div className="space-y-3">
                   <Link href="/contact">
                     <button className="w-full flex items-center space-x-3 p-3 bg-white dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
-                      <MessageCircle className="w-5 h-5 text-blue-600" />
+                      <MessageCircle className="w-5 h-5 text-sky-600" />
                       <span className="text-gray-900 dark:text-white">Schedule a Demo</span>
                     </button>
                   </Link>
@@ -317,7 +317,7 @@ export default function Contact() {
                     <span className="text-gray-900 dark:text-white">Consultation Call</span>
                   </button>
                   <button className="w-full flex items-center space-x-3 p-3 bg-white dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
-                    <Building2 className="w-5 h-5 text-purple-600" />
+                    <Building2 className="w-5 h-5 text-sky-600" />
                     <span className="text-gray-900 dark:text-white">Enterprise Inquiry</span>
                   </button>
                 </div>
@@ -354,13 +354,13 @@ export default function Contact() {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-sky-600 to-sky-500 rounded-full flex items-center justify-center mx-auto mb-6">
                   <MapPin className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
                   {office.city}
                 </h3>
-                <p className="text-blue-600 dark:text-blue-400 font-medium mb-4">
+                <p className="text-sky-600 dark:text-sky-400 font-medium mb-4">
                   {office.country}
                 </p>
                 <p className="text-gray-600 dark:text-gray-400 mb-3">

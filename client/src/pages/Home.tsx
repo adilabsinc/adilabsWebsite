@@ -78,7 +78,7 @@ export default function Home() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 text-white overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-sky-900 via-sky-800 to-sky-900 text-white overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img src="https://www.bisinfotech.com/wp-content/uploads/2025/05/NTT-DATA-Launches-Smart-AI-Agent-Ecosystem-Initiative.jpg" alt="Tech Background" className="w-full h-full object-cover object-center opacity-60 blur-sm" />
@@ -93,7 +93,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-400 to-sky-300 bg-clip-text text-transparent">
                 ADILABS INC
               </span>
             </h1>
@@ -110,7 +110,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/products">
                 <motion.button 
-                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center space-x-2"
+                  className="px-8 py-4 bg-gradient-to-r from-sky-600 to-sky-500 rounded-lg font-semibold text-lg hover:from-sky-700 hover:to-sky-600 transition-all duration-300 flex items-center justify-center space-x-2"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -145,9 +145,9 @@ export default function Home() {
                     title: 'Team Collaboration',
                     desc: 'Connect, share, and grow together'
                   }].map((card, idx) => (
-                    <div key={idx} className="bg-gradient-to-b from-purple-800/60 to-blue-900/60 rounded-xl p-8 flex flex-col items-center shadow-xl border border-white/10 relative group">
+                    <div key={idx} className="bg-gradient-to-b from-sky-800/60 to-sky-900/60 rounded-xl p-8 flex flex-col items-center shadow-xl border border-white/10 relative group">
                       <div className="absolute -top-6 left-1/2 -translate-x-1/2 flex items-center justify-center">
-                        <div className="w-20 h-20 bg-gradient-to-tr from-purple-500 via-blue-500 to-pink-500 rounded-full flex items-center justify-center shadow-2xl ring-4 ring-purple-400/30 group-hover:scale-105 transition-transform">
+                        <div className="w-20 h-20 bg-gradient-to-tr from-sky-500 via-sky-400 to-sky-300 rounded-full flex items-center justify-center shadow-2xl ring-4 ring-sky-400/30 group-hover:scale-105 transition-transform">
                           <card.icon className="w-12 h-12 text-white drop-shadow-lg" />
                         </div>
                       </div>
@@ -165,47 +165,47 @@ export default function Home() {
         
         {/* Floating Elements */}
         <div className="absolute top-20 left-20 animate-float">
-          <div className="w-16 h-16 bg-blue-500/20 rounded-lg backdrop-blur-sm"></div>
+          <div className="w-16 h-16 bg-sky-500/20 rounded-lg backdrop-blur-sm"></div>
         </div>
         <div className="absolute bottom-20 right-20 animate-float" style={{ animationDelay: '1s' }}>
-          <div className="w-12 h-12 bg-purple-500/20 rounded-full backdrop-blur-sm"></div>
+          <div className="w-12 h-12 bg-sky-500/20 rounded-full backdrop-blur-sm"></div>
         </div>
       </section>
 
       {/* Who We Are Section */}
-      <section className="relative py-20 bg-[#181828] border-t-4 border-purple-500">
+      <section className="relative py-20 bg-[#181828] border-t-4 border-sky-500">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
           {/* Left: Icon + Text + Image */}
           <div className="flex-1 flex flex-col gap-6">
             <div className="flex items-center gap-4 mb-2">
-              <div className="w-12 h-12 bg-gradient-to-tr from-purple-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-tr from-sky-500 to-sky-400 rounded-full flex items-center justify-center shadow-lg">
                 <Brain className="w-7 h-7 text-white" />
               </div>
               <span className="uppercase tracking-widest text-xs text-gray-300 font-semibold"> | Who We Are</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              We are a <span className="text-transparent bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text font-extrabold">group of experts</span> looking to help companies leverage technology to do more than they had ever thought possible.
+              We are a <span className="text-transparent bg-gradient-to-r from-sky-400 to-sky-300 bg-clip-text font-extrabold">group of experts</span> looking to help companies leverage technology to do more than they had ever thought possible.
             </h2>
             <p className="text-gray-300 text-base md:text-lg max-w-xl">
               We do this through a number of services to provide comprehensive solutions for your business. Scroll down to read about what we can do for you.
             </p>
             <div className="mt-8">
-              <img src="https://plus.unsplash.com/premium_photo-1661767467261-4a4bed92a507?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dGVhbXxlbnwwfHwwfHx8MA%3D%3D" alt="Team" className="rounded-lg border-4 border-purple-500 shadow-2xl rotate-[-4deg] w-80" />
+              <img src="https://plus.unsplash.com/premium_photo-1661767467261-4a4bed92a507?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dGVhbXxlbnwwfHwwfHx8MA%3D%3D" alt="Team" className="rounded-lg border-4 border-sky-500 shadow-2xl rotate-[-4deg] w-80" />
             </div>
           </div>
           {/* Right: Values + Signature */}
           <div className="flex-1 flex flex-col gap-8 items-start justify-center mt-12 md:mt-0">
             <ul className="space-y-4 text-gray-200 text-base">
-              <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-purple-400" /> We always focus on technical excellence</li>
-              <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-purple-400" /> Wherever you're going, we bring ideas and excitement</li>
-              <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-purple-400" /> We're consultants, guides, and partners for brands</li>
+              <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-sky-400" /> We always focus on technical excellence</li>
+              <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-sky-400" /> Wherever you're going, we bring ideas and excitement</li>
+              <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-sky-400" /> We're consultants, guides, and partners for brands</li>
             </ul>
             <div className="mt-8">
-              <div className="text-purple-300 font-semibold">Mohammed Shahnawaz</div>
+              <div className="text-sky-300 font-semibold">Mohammed Shahnawaz</div>
               <div className="text-gray-400 text-sm mb-2">CTO, Prosols</div>
               {/* SVG Signature */}
               <svg width="160" height="40" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 30 Q 30 10, 50 30 T 90 30 Q 110 10, 130 30 T 150 30" stroke="#B983FF" strokeWidth="3" fill="none" filter="url(#glow)" />
+                <path d="M10 30 Q 30 10, 50 30 T 90 30 Q 110 10, 130 30 T 150 30" stroke="#0ea5e9" strokeWidth="3" fill="none" filter="url(#glow)" />
                 <defs>
                   <filter id="glow" x="-10" y="-10" width="180" height="60">
                     <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
@@ -260,7 +260,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-sky-600 to-sky-500 bg-clip-text text-transparent">
               Our Solutions & Capabilities
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
@@ -297,7 +297,7 @@ export default function Home() {
                   className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 min-w-[320px] max-w-xs flex flex-col items-center justify-center border border-gray-200 dark:border-gray-800"
                   whileHover={{ y: -8, scale: 1.03 }}
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-r from-sky-600 to-sky-500 rounded-lg flex items-center justify-center mb-6">
                     <feature.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white text-center">
@@ -353,7 +353,7 @@ export default function Home() {
               </div>
               <Link href="/products">
                 <motion.button 
-                  className="mt-8 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center space-x-2"
+                  className="mt-8 px-8 py-4 bg-gradient-to-r from-sky-600 to-sky-500 text-white rounded-lg font-semibold hover:from-sky-700 hover:to-sky-600 transition-all duration-300 flex items-center space-x-2"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -370,7 +370,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
+              <div className="bg-gradient-to-br from-sky-500 to-sky-600 rounded-2xl p-8 text-white">
                 <div className="space-y-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
@@ -408,15 +408,15 @@ export default function Home() {
           <div className="flex items-center justify-between mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white">Customer stories</h2>
             <div className="flex gap-4">
-              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition"><span className="sr-only">Previous</span><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M13 15l-5-5 5-5" stroke="#B983FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition"><span className="sr-only">Next</span><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M7 5l5 5-5 5" stroke="#B983FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
+              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition"><span className="sr-only">Previous</span><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M13 15l-5-5 5-5" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
+              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition"><span className="sr-only">Next</span><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M7 5l5 5-5 5" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
             <div className="bg-[#232336] rounded-2xl p-8 shadow-lg flex flex-col items-start relative">
               <div className="absolute -top-10 left-8">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Elizabeth Taylor" className="w-20 h-20 rounded-full border-4 border-purple-400 object-cover shadow-xl" />
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Elizabeth Taylor" className="w-20 h-20 rounded-full border-4 border-sky-400 object-cover shadow-xl" />
               </div>
               <div className="mt-12">
                 <p className="text-gray-200 mb-6">It has completely transformed the way I approach my design projects. The tool's ability to generate unique and innovative designs is simply mind-boggling.</p>
@@ -427,7 +427,7 @@ export default function Home() {
             {/* Testimonial 2 */}
             <div className="bg-[#232336] rounded-2xl p-8 shadow-lg flex flex-col items-start relative">
               <div className="absolute -top-10 left-8">
-                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ashley Watson" className="w-20 h-20 rounded-full border-4 border-purple-400 object-cover shadow-xl" />
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ashley Watson" className="w-20 h-20 rounded-full border-4 border-sky-400 object-cover shadow-xl" />
               </div>
               <div className="mt-12">
                 <p className="text-gray-200 mb-6">I appreciate the flexibility it provides, allowing me to adjust parameters and fine-tune the generated designs to meet my specific requirements.</p>
@@ -438,7 +438,7 @@ export default function Home() {
             {/* Testimonial 3 */}
             <div className="bg-[#232336] rounded-2xl p-8 shadow-lg flex flex-col items-start relative">
               <div className="absolute -top-10 left-8">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Caleb Jones" className="w-20 h-20 rounded-full border-4 border-purple-400 object-cover shadow-xl" />
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Caleb Jones" className="w-20 h-20 rounded-full border-4 border-sky-400 object-cover shadow-xl" />
               </div>
               <div className="mt-12">
                 <p className="text-gray-200 mb-6">The AI tool's speed and efficiency are impressive. It rapidly generates multiple design options, saving me valuable time and effort in the ideation phase.</p>
@@ -451,7 +451,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-sky-600 to-sky-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -468,7 +468,7 @@ export default function Home() {
             </p>
             <Link href="/contact">
               <motion.button 
-                className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 flex items-center justify-center space-x-2 mx-auto"
+                className="px-8 py-4 bg-white text-sky-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 flex items-center justify-center space-x-2 mx-auto"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

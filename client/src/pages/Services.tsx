@@ -40,7 +40,7 @@ export default function Services() {
         'Cloud migration services',
         'DevOps automation'
       ],
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-sky-500 to-sky-400'
     },
     {
       icon: Code,
@@ -96,7 +96,7 @@ export default function Services() {
         'Integration automation',
         'Custom automation tools'
       ],
-      color: 'from-indigo-500 to-purple-500'
+      color: 'from-sky-500 to-sky-400'
     }
   ];
 
@@ -126,7 +126,7 @@ export default function Services() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 text-white">
+      <section className="py-20 bg-gradient-to-br from-sky-900 via-sky-800 to-sky-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -134,7 +134,7 @@ export default function Services() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-400 to-sky-300 bg-clip-text text-transparent">
                 Our Services
               </span>
             </h1>
@@ -213,7 +213,7 @@ export default function Services() {
                 viewport={{ once: true }}
               >
                 <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-sky-600 to-sky-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold text-white">{step.step}</span>
                   </div>
                   <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
@@ -226,7 +226,7 @@ export default function Services() {
                 
                 {index < process.length - 1 && (
                   <div className="hidden lg:block absolute top-8 -right-4 z-10">
-                    <ArrowRight className="w-8 h-8 text-blue-600" />
+                    <ArrowRight className="w-8 h-8 text-sky-600" />
                   </div>
                 )}
               </motion.div>
@@ -265,7 +265,7 @@ export default function Services() {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-sky-600 to-sky-500 rounded-lg mx-auto mb-3 flex items-center justify-center">
                   <Cpu className="w-6 h-6 text-white" />
                 </div>
                 <span className="text-sm font-medium text-gray-900 dark:text-white">{tech}</span>
@@ -276,7 +276,7 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-sky-600 to-sky-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -290,7 +290,7 @@ export default function Services() {
             </p>
             <Link href="/contact">
               <motion.button 
-                className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2"
+                className="px-8 py-4 bg-white text-sky-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
