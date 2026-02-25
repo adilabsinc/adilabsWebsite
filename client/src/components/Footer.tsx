@@ -11,10 +11,10 @@ export default function Footer() {
               <div className="w-8 h-8 bg-gradient-to-r from-sky-600 to-sky-500 rounded-lg flex items-center justify-center">
                 <Zap className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold">ADILABS INC</span>
+              <span className="text-xl font-bold">ADILABS AI</span>
             </div>
             <p className="text-gray-400">
-              Revolutionizing businesses through AI, blockchain, cloud, and automation solutions.
+              Revolutionizing Businesses with through AI, blockchain, cloud, and automation solutions.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-sky-400 transition-colors">
@@ -57,10 +57,10 @@ export default function Footer() {
                 <Mail className="w-5 h-5 text-sky-400" />
                 <span className="text-gray-400">contact@adilabs.com</span>
               </div>
-              <div className="flex items-center space-x-3">
+              {/* <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-sky-400" />
                 <span className="text-gray-400">+1 (623) 336-5336</span>
-              </div>
+              </div> */}
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-sky-400" />
                 <span className="text-gray-400">Toronoto, Canada</span>
@@ -71,7 +71,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 ADILABS INC. All rights reserved. Revolutionizing Businesses with Tech Empowerment.
+            © 2024 ADILABS AI. All rights reserved. Revolutionizing Businesses with with Tech Empowerment.
           </p>
         </div>
       </div>

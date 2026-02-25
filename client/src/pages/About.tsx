@@ -25,26 +25,26 @@ export default function About() {
     }
   ];
 
-  const team = [
-    {
-      name: 'Masarrath Sulthana',
-      role: 'Head of Operations (HOO)',
-      expertise: 'AI & Machine Learning',
-      experience: '12+ years'
-    },
-    {
-      name: 'Mohammed Shahnawaz',
-      role: 'Chief Technology Officer (CTO)',
-      expertise: 'Distributed Systems',
-      experience: '5+ years'
-    },
-    {
-      name: 'Altaf Aziz',
-      role: 'Managing Director (MD)',
-      expertise: 'Business Strategy',
-      experience: '10+ years'
-    },
-  ];
+  // const team = [
+  //   {
+  //     name: 'Masarrath Sulthana',
+  //     role: 'Head of Operations (HOO)',
+  //     expertise: 'AI & Machine Learning',
+  //     experience: '12+ years'
+  //   },
+  //   {
+  //     name: 'Mohammed Shahnawaz',
+  //     role: 'Chief Technology Officer (CTO)',
+  //     expertise: 'Distributed Systems',
+  //     experience: '5+ years'
+  //   },
+  //   {
+  //     name: 'Altaf Aziz',
+  //     role: 'Managing Director (MD)',
+  //     expertise: 'Business Strategy',
+  //     experience: '10+ years'
+  //   },
+  // ];
 
   return (
     <div className="pt-16">
@@ -59,7 +59,7 @@ export default function About() {
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-sky-600 to-sky-500 bg-clip-text text-transparent">
-                About ADILABS INC
+                About ADILABS AI
               </span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
@@ -154,7 +154,7 @@ export default function About() {
       </section>
 
       {/* Team */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      {/* <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -201,7 +201,7 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Company Stats */}
       <section className="py-20 bg-gradient-to-r from-sky-600 to-sky-500 text-white">

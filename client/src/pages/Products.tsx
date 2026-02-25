@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { 
   Building2, 
-  Brain, 
-  FileText, 
-  ShoppingCart, 
+  Clock, 
+  FileSearch, 
+  ShieldAlert, 
   Users, 
   CheckCircle,
   ArrowRight,
@@ -16,35 +16,26 @@ import { Link } from 'wouter';
 export default function Products() {
   const platformFeatures = [
     {
-      icon: Brain,
-      title: 'AI Agentic Models',
-      description: 'Pre-configured AI models tailored specifically for civil and infrastructure industry tasks'
+      icon: Clock,
+      title: 'Timesheet Management',
+      description: 'Time sheet management platform for construction projects, including time tracking, project control, and cost management.'
     },
     {
-      icon: FileText,
-      title: 'CBS Reports',
-      description: 'Comprehensive Cost Breakdown Structure reports with real-time analytics'
+      icon: Building2,
+      title: 'BardLime',
+      description: 'Construction management platform with project control and AI-enabled cost management, designed for organizations that need integrated field reporting and cost control at scale.'
     },
     {
-      icon: ShoppingCart,
-      title: 'Automated Orders',
-      description: 'Automated Purchase Orders and Change Orders with intelligent workflow management'
+      icon: FileSearch,
+      title: 'LimeDocs',
+      description: 'Highly scalable, Office 365–integrated agentic document platform for AI-powered analysis and querying across your workspace through a unified agentic interface.'
     },
     {
-      icon: BarChart3,
-      title: 'Resource Tracking',
-      description: 'Advanced tracking for Labor, Equipment, and Material resources across projects'
+      icon: ShieldAlert,
+      title: 'BardLime Risk',
+      description: 'Complete risk management platform for construction projects, including hazard identification, risk assessment, and mitigation strategies.'
     },
-    {
-      icon: Users,
-      title: 'Role-based Approvals',
-      description: 'Sophisticated approval systems with customizable role-based permissions'
-    },
-    {
-      icon: Zap,
-      title: 'AI Assistant',
-      description: 'Intelligent AI assistant embedded across all workflows for enhanced productivity'
-    }
+    
   ];
 
   const benefits = [
@@ -101,7 +92,7 @@ export default function Products() {
             >
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-sky-400 to-sky-300 bg-clip-text text-transparent">
-                  Flagship SaaS Platform
+                  Enterprise SaaS Platform
                 </span>
               </h1>
               <p className="text-xl text-gray-300 mb-8">
@@ -109,14 +100,16 @@ export default function Products() {
                 Transform your project management with AI-powered automation and intelligent workflows.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <motion.button 
-                  className="px-8 py-4 bg-gradient-to-r from-sky-600 to-sky-500 rounded-lg font-semibold hover:from-sky-700 hover:to-sky-600 transition-all duration-300 flex items-center justify-center space-x-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span>Request Demo</span>
-                  <ArrowRight className="w-5 h-5" />
-                </motion.button>
+                <Link href="/contact">
+                  <motion.button 
+                    className="px-8 py-4 bg-gradient-to-r from-sky-600 to-sky-500 rounded-lg font-semibold hover:from-sky-700 hover:to-sky-600 transition-all duration-300 flex items-center justify-center space-x-2"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span>Request Demo</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </motion.button>
+                </Link>
                 <motion.button 
                   className="px-8 py-4 border-2 border-white/30 rounded-lg font-semibold hover:bg-white/10 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
@@ -257,7 +250,7 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Use Cases */}
+      {/* Use Cases - commented out
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -301,6 +294,43 @@ export default function Products() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+      */}
+
+      {/* Trusted by / Our Clients */}
+      <section className="py-20 bg-white dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Trusted by Industry Leaders</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              Our clients include leading organizations in infrastructure, transportation, and construction
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="flex flex-wrap items-center justify-center gap-12 md:gap-16 lg:gap-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="rounded-lg flex items-center">
+              <img src="/t_500x300.jpg" alt="Trusted client" className="h-12 md:h-14 w-auto object-contain" />
+            </div>
+            <div className="rounded-lg flex items-center">
+              <img src="/t_500x300%20(1).jpg" alt="Trusted client" className="h-12 md:h-14 w-auto object-contain" />
+            </div>
+            <div className="rounded-lg flex items-center">
+              <img src="/onxpress-logo.svg" alt="OnExpress" className="h-12 md:h-14 w-auto object-contain" />
+            </div>
+          </motion.div>
         </div>
       </section>
 

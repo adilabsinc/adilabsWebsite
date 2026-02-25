@@ -16,7 +16,7 @@ export default function Services() {
   const services = [
     {
       icon: Brain,
-      title: 'AI Agentic Models & LLMs',
+      title: 'Agentic AI Solutions',
       description: 'Advanced AI solutions with pre-configured models for industry-specific tasks',
       features: [
         'Custom AI model development',
@@ -30,7 +30,7 @@ export default function Services() {
     },
     {
       icon: Cloud,
-      title: 'Cloud Infrastructure & Kubernetes',
+      title: 'Cloud Infrastructure',
       description: 'Scalable cloud-native solutions with advanced orchestration capabilities',
       features: [
         'Kubernetes cluster management',
@@ -44,7 +44,7 @@ export default function Services() {
     },
     {
       icon: Code,
-      title: 'SaaS Application Development',
+      title: 'Enterprise SaaS Application',
       description: 'Custom SaaS platforms tailored for enterprise and infrastructure needs',
       features: [
         'Full-stack web applications',

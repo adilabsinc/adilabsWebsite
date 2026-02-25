@@ -58,12 +58,12 @@ export default function Contact() {
       details: 'contact@adilabs.com',
       description: 'Send us an email anytime'
     },
-    {
-      icon: Phone,
-      title: 'Call Us',
-      details: '+1 (623) 336-5336',
-      description: 'Mon-Fri from 9am to 6pm PST'
-    },
+    // {
+    //   icon: Phone,
+    //   title: 'Call Us',
+    //   details: '+1 (623) 336-5336',
+    //   description: 'Mon-Fri from 9am to 6pm PST'
+    // },
     {
       icon: MapPin,
       title: 'Visit Us',
@@ -83,19 +83,19 @@ export default function Contact() {
       city: 'Toronoto',
       country: 'Canada',
       address: '586 Winterton way Mississuaga Ontario L5R 3J4',
-      phone: '+1 (623) 336-5336'
+      // phone: '+1 (623) 336-5336'
     },
     {
       city: 'Hyderabad',
       country: 'India',
       address: 'Gachiboli, Hyderabad, Telangana',
-      phone: '+91 9133085364'
+      // phone: '+91 9133085364'
     },
     {
       city: 'USA',
       country: 'USA',
       address: '586 Winterton way Mississuaga Ontario L5R 3J4',
-      phone: '+1 (623) 336-5336'
+      // phone: '+1 (623) 336-5336'
     },
   ];
 
@@ -366,9 +366,9 @@ export default function Contact() {
                 <p className="text-gray-600 dark:text-gray-400 mb-3">
                   {office.address}
                 </p>
-                <p className="text-gray-900 dark:text-white font-medium">
+                {/* <p className="text-gray-900 dark:text-white font-medium">
                   {office.phone}
-                </p>
+                </p> */}
               </motion.div>
             ))}
           </div>

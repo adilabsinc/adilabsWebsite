@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
-import { Moon, Sun, Menu, X, Zap } from 'lucide-react';
+import { Moon, Sun, Menu, X } from 'lucide-react';
 import { useTheme } from '../hooks/use-theme';
 
 export default function Navigation() {
@@ -22,11 +22,13 @@ export default function Navigation() {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-sky-600 to-sky-500 rounded-lg flex items-center justify-center shadow-lg">
-                <Zap className="w-6 h-6 text-white" />
-              </div>
+              <img
+                src="/adilabs-logo.jpeg"
+                alt="ADILABS INC"
+                className="h-10 w-auto object-contain"
+              />
               <span className="text-2xl font-bold bg-gradient-to-r from-sky-600 to-sky-500 bg-clip-text text-transparent">
-                ADILABS INC
+                ADILABS AI
               </span>
             </Link> 
           </div>

@@ -19,7 +19,7 @@ import CountUp from 'react-countup';
 
 export default function Home() {
   const [typedText, setTypedText] = useState('');
-  const fullText = 'Revolutionizing Businesses with Tech Empowerment';
+  const fullText = 'Revolutionizing Businesses with AI Solutions';
 
   useEffect(() => {
     let index = 0;
@@ -92,9 +92,18 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-sky-400 to-sky-300 bg-clip-text text-transparent">
-                ADILABS INC
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tight">
+              <span 
+                className="inline-block bg-gradient-to-r from-sky-300 via-cyan-300 to-sky-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(56,189,248,0.4)]"
+                style={{ fontFamily: "'Orbitron', sans-serif" }}
+              >
+                ADILABS
+              </span>
+              <span 
+                className="inline-block ml-2 md:ml-4 px-4 py-1 md:px-5 md:py-1.5 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold rounded-lg bg-gradient-to-r from-cyan-400 to-sky-500 text-white shadow-lg shadow-sky-500/40 border border-white/20"
+                style={{ fontFamily: "'Syne', sans-serif" }}
+              >
+                AI
               </span>
             </h1>
             <div className="h-16 mb-8">
@@ -324,7 +333,7 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-                Flagship SaaS Platform
+                Enterprise SaaS Application
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
                 Tailored for large civil and infrastructure companies in metro and railway sectors.
@@ -403,17 +412,17 @@ export default function Home() {
       </section>
 
       {/* Customer Stories Section */}
+      {/*       {/* Customer stories - commented out
       <section className="py-20 bg-[#181828]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white">Customer stories</h2>
             <div className="flex gap-4">
-              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition"><span className="sr-only">Previous</span><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M13 15l-5-5 5-5" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition"><span className="sr-only">Next</span><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M7 5l5 5-5 5" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
+              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition"><span className="sr-only">Previous</span><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M13 15l-5-5 5-5" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg></button>
+              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition"><span className="sr-only">Next</span><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M7 5l5 5-5 5" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg></button>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
             <div className="bg-[#232336] rounded-2xl p-8 shadow-lg flex flex-col items-start relative">
               <div className="absolute -top-10 left-8">
                 <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Elizabeth Taylor" className="w-20 h-20 rounded-full border-4 border-sky-400 object-cover shadow-xl" />
@@ -424,7 +433,6 @@ export default function Home() {
                 <div className="text-gray-400 text-sm">Product Manager</div>
               </div>
             </div>
-            {/* Testimonial 2 */}
             <div className="bg-[#232336] rounded-2xl p-8 shadow-lg flex flex-col items-start relative">
               <div className="absolute -top-10 left-8">
                 <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ashley Watson" className="w-20 h-20 rounded-full border-4 border-sky-400 object-cover shadow-xl" />
@@ -435,7 +443,6 @@ export default function Home() {
                 <div className="text-gray-400 text-sm">Product Designer</div>
               </div>
             </div>
-            {/* Testimonial 3 */}
             <div className="bg-[#232336] rounded-2xl p-8 shadow-lg flex flex-col items-start relative">
               <div className="absolute -top-10 left-8">
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Caleb Jones" className="w-20 h-20 rounded-full border-4 border-sky-400 object-cover shadow-xl" />
@@ -449,6 +456,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */ } 
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-sky-600 to-sky-500 text-white">
