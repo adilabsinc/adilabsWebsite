@@ -88,33 +88,61 @@ export default function Home() {
         <div className="absolute inset-0 tech-pattern opacity-10"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="relative"
           >
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tight">
-              <span 
-                className="inline-block bg-gradient-to-r from-sky-300 via-cyan-300 to-sky-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(56,189,248,0.4)]"
-                style={{ fontFamily: "'Orbitron', sans-serif" }}
+            <h1 className="flex flex-wrap items-baseline justify-center gap-x-3 gap-y-2 mb-6">
+              <motion.span
+                initial={{ opacity: 0, y: 28, letterSpacing: '-0.08em' }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  letterSpacing: '-0.02em'
+                }}
+                transition={{
+                  opacity: { duration: 0.5, delay: 0.1 },
+                  y: { duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] },
+                  letterSpacing: { duration: 1, delay: 0.25, ease: [0.22, 1, 0.36, 1] }
+                }}
+                className="inline-block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white"
+                style={{
+                  fontFamily: "'Syne', sans-serif",
+                  textShadow: '0 0 0 transparent, 0 2px 24px rgba(0,0,0,0.2), 0 0 80px rgba(56, 189, 248, 0.18)'
+                }}
               >
                 ADILABS
-              </span>
-              <span 
-                className="inline-block ml-2 md:ml-4 px-4 py-1 md:px-5 md:py-1.5 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold rounded-lg bg-gradient-to-r from-cyan-400 to-sky-500 text-white shadow-lg shadow-sky-500/40 border border-white/20"
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, scale: 0.88, letterSpacing: '0.2em' }}
+                animate={{ opacity: 1, scale: 1, letterSpacing: '0.08em' }}
+                transition={{
+                  duration: 0.55,
+                  delay: 0.35,
+                  ease: [0.22, 1, 0.36, 1]
+                }}
+                className="inline-flex items-center px-4 py-1.5 md:px-5 md:py-2 rounded-full text-lg sm:text-xl md:text-2xl font-bold tracking-wide text-white bg-white/15 backdrop-blur-md border border-white/25 shadow-[0_4px_24px_rgba(0,0,0,0.12)]"
                 style={{ fontFamily: "'Syne', sans-serif" }}
               >
                 AI
-              </span>
+              </motion.span>
             </h1>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="mx-auto h-0.5 w-24 rounded-full bg-gradient-to-r from-transparent via-sky-400/80 to-transparent"
+              style={{ transformOrigin: 'center' }}
+            />
             <div className="h-16 mb-8">
               <p className="text-xl md:text-2xl text-gray-300">
                 {typedText}
                 <span className="animate-pulse">|</span>
               </p>
             </div>
-            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              We leverage emerging technologies like AI and blockchain to deliver groundbreaking solutions 
-              that drive efficiency, scalability, and security for businesses worldwide.
+            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+              Enterprise agent solutions with embedded security—OAuth and OIDC at the agent level, federated agents, and cross-organization security controls.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/products">
@@ -209,23 +237,7 @@ export default function Home() {
               <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-sky-400" /> Wherever you're going, we bring ideas and excitement</li>
               <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-sky-400" /> We're consultants, guides, and partners for brands</li>
             </ul>
-            <div className="mt-8">
-              <div className="text-sky-300 font-semibold">Mohammed Shahnawaz</div>
-              <div className="text-gray-400 text-sm mb-2">CTO, Prosols</div>
-              {/* SVG Signature */}
-              <svg width="160" height="40" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 30 Q 30 10, 50 30 T 90 30 Q 110 10, 130 30 T 150 30" stroke="#0ea5e9" strokeWidth="3" fill="none" filter="url(#glow)" />
-                <defs>
-                  <filter id="glow" x="-10" y="-10" width="180" height="60">
-                    <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
-                    <feMerge>
-                      <feMergeNode in="coloredBlur"/>
-                      <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                  </filter>
-                </defs>
-              </svg>
-            </div>
+            
           </div>
         </div>
       </section>
@@ -233,7 +245,7 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-16 bg-transparent">
         <div className="max-w-5xl mx-auto px-4">
-          <div className="bg-[#181828] rounded-2xl shadow-2xl py-12 px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="bg-gradient-to-r from-sky-700 to-sky-600 rounded-2xl shadow-2xl py-12 px-6 flex flex-col md:flex-row items-center justify-between gap-8">
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
@@ -248,10 +260,10 @@ export default function Home() {
                     scrollSpyOnce
                   />
                 </div>
-                <div className="text-gray-400 text-sm md:text-base tracking-wide">{stat.label}</div>
+                <div className="text-sky-100 text-sm md:text-base tracking-wide">{stat.label}</div>
                 {/* Vertical Divider */}
                 {index < stats.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 right-0 transform -translate-y-1/2 h-12 border-r border-gray-700"></div>
+                  <div className="hidden md:block absolute top-1/2 right-0 transform -translate-y-1/2 h-12 border-r border-white/30"></div>
                 )}
               </div>
             ))}

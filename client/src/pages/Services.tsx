@@ -1,100 +1,118 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { 
   Brain, 
   Cloud, 
-  Shield, 
-  Settings, 
   Database, 
   Code,
   CheckCircle,
   ArrowRight,
-  Cpu
+  Link2
 } from 'lucide-react';
 import { Link } from 'wouter';
+
+const techList = [
+  { name: 'React', slug: 'react', color: '61DAFB' },
+  { name: 'Node.js', slug: 'nodedotjs', color: '339933' },
+  { name: 'Python', slug: 'python', color: '3776AB' },
+  { name: 'AWS', slug: 'amazonwebservices', color: 'FF9900', fallbackIcon: Cloud },
+  { name: 'Kubernetes', slug: 'kubernetes', color: '326CE5' },
+  { name: 'Docker', slug: 'docker', color: '2496ED' },
+  { name: 'TensorFlow', slug: 'tensorflow', color: 'FF6F00' },
+  { name: 'PyTorch', slug: 'pytorch', color: 'EE4C2C' },
+  { name: 'Blockchain', slug: 'blockchaindotcom', color: '121D33', fallbackIcon: Link2 },
+  { name: 'Ethereum', slug: 'ethereum', color: '627EEA' },
+  { name: 'MongoDB', slug: 'mongodb', color: '47A248' },
+  { name: 'PostgreSQL', slug: 'postgresql', color: '4169E1' },
+];
+
+function TechIcon({ tech, index }: { tech: (typeof techList)[0]; index: number }) {
+  const [imgError, setImgError] = useState(false);
+  const FallbackIcon = tech.fallbackIcon;
+  return (
+    <motion.div
+      className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300"
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6, delay: index * 0.05 }}
+      viewport={{ once: true }}
+      whileHover={{ y: -5 }}
+    >
+      <div
+        className="w-12 h-12 rounded-lg mx-auto mb-3 flex items-center justify-center bg-white dark:bg-gray-700/50 shadow-inner"
+        style={FallbackIcon && imgError ? { backgroundColor: `#${tech.color}` } : undefined}
+      >
+        {FallbackIcon && imgError ? (
+          <FallbackIcon className="w-7 h-7 text-white" />
+        ) : (
+          <img
+            src={`https://cdn.simpleicons.org/${tech.slug}/${tech.color}`}
+            alt={tech.name}
+            className="w-7 h-7"
+            onError={() => setImgError(true)}
+          />
+        )}
+      </div>
+      <span className="text-sm font-medium text-gray-900 dark:text-white">{tech.name}</span>
+    </motion.div>
+  );
+}
 
 export default function Services() {
   const services = [
     {
-      icon: Brain,
-      title: 'Agentic AI Solutions',
-      description: 'Advanced AI solutions with pre-configured models for industry-specific tasks',
-      features: [
-        'Custom AI model development',
-        'LLM integration and optimization',
-        'Intelligent automation workflows',
-        'Natural language processing',
-        'Predictive analytics',
-        'AI-powered decision making'
-      ],
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      icon: Cloud,
-      title: 'Cloud Infrastructure',
-      description: 'Scalable cloud-native solutions with advanced orchestration capabilities',
-      features: [
-        'Kubernetes cluster management',
-        'Multi-cloud architecture',
-        'Auto-scaling infrastructure',
-        'Container orchestration',
-        'Cloud migration services',
-        'DevOps automation'
-      ],
-      color: 'from-sky-500 to-sky-400'
-    },
-    {
       icon: Code,
-      title: 'Enterprise SaaS Application',
-      description: 'Custom SaaS platforms tailored for enterprise and infrastructure needs',
+      title: 'AI-Integrated Application Engineering',
+      description: 'Traditional applications are no longer enough. We build applications with AI embedded from the ground up — not as an afterthought. Agentic UX on the front end and agentic workflows beneath: human-in-the-loop decision points, agent handoff and orchestration, and multi-agent pipelines across .NET, Java, Python, and Node.js. The application and the intelligence are one system.',
       features: [
-        'Full-stack web applications',
-        'Mobile-responsive design',
-        'API development',
-        'Third-party integrations',
-        'Performance optimization',
-        'Scalable architecture'
+        'AI embedded from day one, not retrofitted',
+        'Agentic UX and agentic workflows',
+        'Human-in-the-loop decision points',
+        'Agent handoff and orchestration patterns',
+        'Multi-agent pipelines',
+        '.NET, Java, Python, and Node.js stacks'
       ],
       color: 'from-green-500 to-emerald-500'
     },
     {
-      icon: Database,
-      title: 'Data Integration & Analysis',
-      description: 'Comprehensive data solutions for informed business decisions',
+      icon: Brain,
+      title: 'Agentic AI',
+      description: 'Enterprise-grade AI systems built on Microsoft Semantic Kernel, AutoGen, CrewAI, and LangGraph. Agents that work securely. We specialize in the defining challenge: data spillage. Federated agents with cross-organizational security controls, OAuth and OIDC at the agent level, and zero-trust principles from day one. We also assess business processes, identify where AI creates genuine leverage, and build solutions tailored to that reality — not off-the-shelf toolkits dressed up as strategy.',
       features: [
-        'Real-time data processing',
-        'ETL pipeline development',
-        'Business intelligence dashboards',
-        'Data warehouse solutions',
-        'Analytics and reporting',
-        'Data visualization'
+        'Semantic Kernel, AutoGen, CrewAI, LangGraph',
+        'Federated agents and data spillage prevention',
+        'OAuth and OIDC identity at the agent level',
+        'Zero-trust security from day one',
+        'Business process assessment for AI leverage',
+        'Tailored solutions, not generic toolkits'
+      ],
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      icon: Database,
+      title: 'Data & Analytics',
+      description: 'Modern cloud-native data warehouses, real-time pipelines, and analytics platforms designed for scale and governance. Data lakes on Azure and AWS form the foundation for large-scale storage and processing. Insights are surfaced through Power BI with embedded AI integration, turning raw data into decisions rather than dashboards.',
+      features: [
+        'Databricks, Azure Synapse, Microsoft Fabric',
+        'AWS Glue, Snowflake, and AWS Redshift',
+        'Data lakes on Azure and AWS',
+        'Power BI with embedded AI integration',
+        'Real-time pipelines and analytics at scale',
+        'Governance and decision-ready insights'
       ],
       color: 'from-orange-500 to-red-500'
     },
     {
-      icon: Shield,
-      title: 'Cybersecurity & Risk Mitigation',
-      description: 'Advanced security measures to protect your digital assets',
+      icon: Cloud,
+      title: 'Infrastructure',
+      description: 'Cloud-native foundations built on Kubernetes, with GitOps-driven delivery through Flux and ArgoCD. Deployed across Azure, AWS, and GCP — or hybrid where the architecture demands it. Repeatable, auditable, production-grade.',
       features: [
-        'Security audits and assessments',
-        'Threat detection systems',
-        'Compliance management',
-        'Identity and access management',
-        'Incident response planning',
-        'Security training programs'
-      ],
-      color: 'from-red-500 to-pink-500'
-    },
-    {
-      icon: Settings,
-      title: 'Digital Process Automation',
-      description: 'Streamline operations with intelligent automation solutions',
-      features: [
-        'Workflow automation',
-        'Robotic process automation (RPA)',
-        'Power Automate solutions',
-        'Business process optimization',
-        'Integration automation',
-        'Custom automation tools'
+        'Kubernetes-based cloud-native foundations',
+        'GitOps delivery with Flux and ArgoCD',
+        'Azure, AWS, and GCP deployment',
+        'Hybrid and multi-cloud architectures',
+        'Repeatable, auditable pipelines',
+        'Production-grade operations'
       ],
       color: 'from-sky-500 to-sky-400'
     }
@@ -252,24 +270,8 @@ export default function Services() {
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            {[
-              'React', 'Node.js', 'Python', 'AWS', 'Kubernetes', 'Docker',
-              'TensorFlow', 'PyTorch', 'Blockchain', 'Ethereum', 'MongoDB', 'PostgreSQL'
-            ].map((tech, index) => (
-              <motion.div
-                key={tech}
-                className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="w-12 h-12 bg-gradient-to-r from-sky-600 to-sky-500 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                  <Cpu className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-sm font-medium text-gray-900 dark:text-white">{tech}</span>
-              </motion.div>
+            {techList.map((tech, index) => (
+              <TechIcon key={tech.name} tech={tech} index={index} />
             ))}
           </div>
         </div>

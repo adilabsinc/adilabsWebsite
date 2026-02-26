@@ -57,14 +57,23 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-sky-600 to-sky-500 bg-clip-text text-transparent">
-                About ADILABS AI
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">
+              <span className="text-gray-900 dark:text-white" style={{ fontFamily: "'Syne', sans-serif" }}>
+                About{' '}
+              </span>
+              <span className="text-sky-600 dark:text-sky-400" style={{ fontFamily: "'Syne', sans-serif" }}>
+                ADILABS
+              </span>
+              <span
+                className="inline-flex items-center ml-2 px-3 py-0.5 rounded-full text-2xl md:text-3xl font-bold bg-sky-100 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-700"
+                style={{ fontFamily: "'Syne', sans-serif" }}
+              >
+                AI
               </span>
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
               We are pioneers in technology empowerment, dedicated to revolutionizing how businesses 
-              operate through innovative AI, blockchain, and cloud solutions.
+              operate through agentic AI, cloud-native infrastructure, and intelligent automation.
             </p>
           </motion.div>
         </div>
@@ -82,12 +91,14 @@ export default function About() {
             >
               <div className="flex items-center mb-6">
                 <Target className="w-8 h-8 text-sky-600 mr-4" />
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Our Mission</h2>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Our Mission</h2>
               </div>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                To empower businesses worldwide by leveraging emerging technologies like AI and blockchain 
-                to deliver groundbreaking solutions that drive efficiency, scalability, and security. 
-                We believe in making advanced technology accessible and practical for every organization.
+                To empower enterprises with <strong className="text-gray-800 dark:text-gray-200">agentic AI</strong> and intelligent automation—building 
+                <strong className="text-gray-800 dark:text-gray-200"> federated agents</strong> with OAuth and OIDC, <strong className="text-gray-800 dark:text-gray-200">zero-trust</strong> security, 
+                and <strong className="text-gray-800 dark:text-gray-200">cross-organization controls</strong>. We deliver <strong className="text-gray-800 dark:text-gray-200">LLM-powered</strong> solutions, 
+                <strong className="text-gray-800 dark:text-gray-200"> semantic kernel</strong> and agent frameworks, and <strong className="text-gray-800 dark:text-gray-200">AI-integrated application engineering</strong> 
+                so every organization can turn data into decisions and scale with confidence.
               </p>
             </motion.div>
 
@@ -99,12 +110,14 @@ export default function About() {
             >
               <div className="flex items-center mb-6">
                 <Eye className="w-8 h-8 text-sky-600 mr-4" />
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Our Vision</h2>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Our Vision</h2>
               </div>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                To become the global leader in technology empowerment, creating a future where every 
-                business can harness the full potential of AI, blockchain, and cloud technologies 
-                to achieve unprecedented growth and innovation.
+                To be the trusted partner for <strong className="text-gray-800 dark:text-gray-200">enterprise AI</strong> and <strong className="text-gray-800 dark:text-gray-200">cloud-native</strong> transformation—where 
+                <strong className="text-gray-800 dark:text-gray-200"> agentic workflows</strong>, <strong className="text-gray-800 dark:text-gray-200">data &amp; analytics</strong> at scale, and 
+                <strong className="text-gray-800 dark:text-gray-200"> secure multi-agent systems</strong> are the norm. We envision a future where <strong className="text-gray-800 dark:text-gray-200">human-in-the-loop AI</strong>, 
+                <strong className="text-gray-800 dark:text-gray-200"> GitOps-driven infrastructure</strong>, and <strong className="text-gray-800 dark:text-gray-200">AI-powered decision intelligence</strong> 
+                enable every business to innovate without compromise.
               </p>
             </motion.div>
           </div>

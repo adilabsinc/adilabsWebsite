@@ -18,24 +18,63 @@ export default function Products() {
     {
       icon: Clock,
       title: 'Timesheet Management',
-      description: 'Time sheet management platform for construction projects, including time tracking, project control, and cost management.'
-    },
-    {
-      icon: Building2,
-      title: 'BardLime',
-      description: 'Construction management platform with project control and AI-enabled cost management, designed for organizations that need integrated field reporting and cost control at scale.'
+      tag: 'Workforce & Labor',
+      tagColor: 'bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300',
+      description: 'AI-driven timesheet and workforce management that turns labor data into predictive insights. Smart approval workflows, real-time cost visibility, and anomaly detection keep projects on track and compliant.',
+      keyPoints: [
+        'AI-powered time entry and auto-categorization',
+        'Predictive labor cost analytics',
+        'Real-time project and cost dashboards',
+        'Smart approval workflows & compliance',
+        'Anomaly detection for fraud and errors',
+        'ERP, payroll & scheduling integration'
+      ]
     },
     {
       icon: FileSearch,
       title: 'LimeDocs',
-      description: 'Highly scalable, Office 365–integrated agentic document platform for AI-powered analysis and querying across your workspace through a unified agentic interface.'
+      tag: 'Document Intelligence',
+      tagColor: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300',
+      description: 'Agentic document intelligence that understands your content. Office 365–native AI agents that summarize, compare, and answer in natural language—decisions from documents, not dashboards.',
+      keyPoints: [
+        'Natural language document queries',
+        'Office 365, SharePoint & Teams',
+        'Semantic search & summarization',
+        'Human-in-the-loop & citations',
+        'Enterprise security & multi-tenant',
+        'RAG-powered answers with sources'
+      ]
+    },
+    {
+      icon: Building2,
+      title: 'BardLime',
+      tag: 'Construction & Capital',
+      tagColor: 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300',
+      description: 'Construction and capital project control powered by AI. Estimate-to-complete, field reporting, change management, and cost forecasting in one platform that learns from your projects.',
+      keyPoints: [
+        'AI cost control & forecasting',
+        'Field reporting & mobile capture',
+        'Estimate-to-complete workflows',
+        'Real-time program dashboards',
+        'BIM, scheduling & ERP integration',
+        'Predictive cost & schedule alerts'
+      ]
     },
     {
       icon: ShieldAlert,
       title: 'BardLime Risk',
-      description: 'Complete risk management platform for construction projects, including hazard identification, risk assessment, and mitigation strategies.'
-    },
-    
+      tag: 'Risk & Safety',
+      tagColor: 'bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300',
+      description: 'Risk and safety intelligence for capital projects. AI-assisted hazard ID, risk scoring, and mitigation with full audit trails and compliance—from site-level to enterprise risk posture.',
+      keyPoints: [
+        'AI hazard & risk identification',
+        'Risk scoring & prioritization',
+        'Safety observations & incidents',
+        'Compliance & audit reporting',
+        'BardLime & third-party integration',
+        'Predictive risk analytics'
+      ]
+    }
   ];
 
   const benefits = [
@@ -58,24 +97,6 @@ export default function Products() {
       title: 'Better Compliance',
       description: 'Ensure regulatory compliance with automated reporting',
       percentage: '95%'
-    }
-  ];
-
-  const useCases = [
-    {
-      title: 'Metro Railway Projects',
-      description: 'Complete project management for metro and railway infrastructure development',
-      features: ['Track construction management', 'Station development oversight', 'Safety compliance monitoring']
-    },
-    {
-      title: 'Civil Infrastructure',
-      description: 'Comprehensive solutions for large-scale civil engineering projects',
-      features: ['Bridge construction tracking', 'Road development management', 'Utility infrastructure planning']
-    },
-    {
-      title: 'Smart City Development',
-      description: 'Integrated platform for smart city planning and implementation',
-      features: ['IoT infrastructure management', 'Traffic system optimization', 'Sustainable development tracking']
     }
   ];
 
@@ -182,26 +203,44 @@ export default function Products() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {platformFeatures.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl hover:shadow-lg transition-shadow duration-300"
-                initial={{ opacity: 0, y: 30 }}
+                className="group relative bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-xl hover:border-sky-200 dark:hover:border-sky-800 transition-all duration-300 flex flex-col"
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -4 }}
               >
-                <div className="w-12 h-12 bg-gradient-to-r from-sky-600 to-sky-500 rounded-lg flex items-center justify-center mb-6">
-                  <feature.icon className="w-6 h-6 text-white" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-500 to-sky-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="p-6 flex flex-col flex-1">
+                  {feature.tag && (
+                    <span className={`inline-flex w-fit px-3 py-1.5 rounded-md text-sm font-medium mb-4 ${feature.tagColor}`}>
+                      {feature.tag}
+                    </span>
+                  )}
+                  <div className="w-12 h-12 bg-gradient-to-r from-sky-600 to-sky-500 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-sky-500/20">
+                    <feature.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 leading-tight">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-4 line-clamp-3">
+                    {feature.description}
+                  </p>
+                  {feature.keyPoints && feature.keyPoints.length > 0 && (
+                    <ul className="space-y-2.5 mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                      {feature.keyPoints.map((point, idx) => (
+                        <li key={idx} className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400">
+                          <CheckCircle className="w-4 h-4 text-sky-500 flex-shrink-0 mt-0.5" />
+                          <span className="leading-relaxed">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {feature.description}
-                </p>
               </motion.div>
             ))}
           </div>
@@ -322,11 +361,12 @@ export default function Products() {
             viewport={{ once: true }}
           >
             <div className="rounded-lg flex items-center">
-              <img src="/t_500x300.jpg" alt="Trusted client" className="h-12 md:h-14 w-auto object-contain" />
-            </div>
-            <div className="rounded-lg flex items-center">
               <img src="/t_500x300%20(1).jpg" alt="Trusted client" className="h-12 md:h-14 w-auto object-contain" />
             </div>
+            <div className="rounded-lg flex items-center">
+              <img src="/t_500x300.jpg" alt="Trusted client" className="h-12 md:h-14 w-auto object-contain" />
+            </div>
+            
             <div className="rounded-lg flex items-center">
               <img src="/onxpress-logo.svg" alt="OnExpress" className="h-12 md:h-14 w-auto object-contain" />
             </div>
