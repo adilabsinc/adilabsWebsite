@@ -12,9 +12,10 @@ export default function Navigation() {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
+    { name: 'Tech Stack', path: '/tech-stack' },
     { name: 'Products', path: '/products' },
     { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
+    // { name: 'Contact', path: '/contact' },
   ];
 
   const navDark = true;
@@ -83,7 +84,7 @@ export default function Navigation() {
                     : 'bg-gradient-to-r from-sky-500 to-cyan-500 text-white hover:from-sky-400 hover:to-cyan-400 shadow-lg'
                 }`}
               >
-                AI Readiness
+                Contact Us
               </button>
             </Link>
           </div>

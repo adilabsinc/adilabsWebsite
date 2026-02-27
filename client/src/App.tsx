@@ -5,6 +5,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
+import TechStack from './pages/TechStack';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 
@@ -20,6 +21,7 @@ function App() {
             <Route path="/services" component={Services} />
             <Route path="/products" component={Products} />
             <Route path="/contact" component={Contact} />
+            <Route path="/tech-stack" component={TechStack} />
           </main>
           <Footer />
         </div>

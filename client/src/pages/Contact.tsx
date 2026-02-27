@@ -81,19 +81,19 @@ export default function Contact() {
     {
       city: 'Toronoto',
       country: 'Canada',
-      address: '586 Winterton way Mississuaga Ontario L5R 3J4',
+      // address: '586 Winterton way Mississuaga Ontario L5R 3J4',
       // phone: '+1 (623) 336-5336'
     },
     {
       city: 'Hyderabad',
       country: 'India',
-      address: 'Gachiboli, Hyderabad, Telangana',
+      // address: 'Gachiboli, Hyderabad, Telangana',
       // phone: '+91 9133085364'
     },
     {
-      city: 'USA',
+      city: 'Los Angeles',
       country: 'USA',
-      address: '586 Winterton way Mississuaga Ontario L5R 3J4',
+      // address: '586 Winterton way Mississuaga Ontario L5R 3J4',
       // phone: '+1 (623) 336-5336'
     },
   ];
@@ -361,9 +361,9 @@ export default function Contact() {
                 <p className="text-sky-400 font-medium mb-4">
                   {office.country}
                 </p>
-                <p className="text-gray-300 mb-3">
+                {/* <p className="text-gray-300 mb-3">
                   {office.address}
-                </p>
+                </p> */}
                 {/* <p className="text-white font-medium">
                   {office.phone}
                 </p> */}

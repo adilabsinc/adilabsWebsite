@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { 
   Brain, 
   Cloud, 
@@ -7,63 +6,15 @@ import {
   Code,
   CheckCircle,
   ArrowRight,
-  Link2
 } from 'lucide-react';
 import { Link } from 'wouter';
-
-const techList = [
-  { name: 'React', slug: 'react', color: '61DAFB' },
-  { name: 'Node.js', slug: 'nodedotjs', color: '339933' },
-  { name: 'Python', slug: 'python', color: '3776AB' },
-  { name: 'AWS', slug: 'amazonwebservices', color: 'FF9900', fallbackIcon: Cloud },
-  { name: 'Kubernetes', slug: 'kubernetes', color: '326CE5' },
-  { name: 'Docker', slug: 'docker', color: '2496ED' },
-  { name: 'TensorFlow', slug: 'tensorflow', color: 'FF6F00' },
-  { name: 'PyTorch', slug: 'pytorch', color: 'EE4C2C' },
-  { name: 'Blockchain', slug: 'blockchaindotcom', color: '121D33', fallbackIcon: Link2 },
-  { name: 'Ethereum', slug: 'ethereum', color: '627EEA' },
-  { name: 'MongoDB', slug: 'mongodb', color: '47A248' },
-  { name: 'PostgreSQL', slug: 'postgresql', color: '4169E1' },
-];
-
-function TechIcon({ tech, index }: { tech: (typeof techList)[0]; index: number }) {
-  const [imgError, setImgError] = useState(false);
-  const FallbackIcon = tech.fallbackIcon;
-  return (
-    <motion.div
-      className="bg-white p-6 rounded-xl text-center transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100"
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6, delay: index * 0.05 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -5 }}
-    >
-      <div
-        className="w-12 h-12 rounded-lg mx-auto mb-3 flex items-center justify-center bg-gray-50"
-        style={FallbackIcon && imgError ? { backgroundColor: `#${tech.color}` } : undefined}
-      >
-        {FallbackIcon && imgError ? (
-          <FallbackIcon className="w-7 h-7 text-white" />
-        ) : (
-          <img
-            src={`https://cdn.simpleicons.org/${tech.slug}/${tech.color}`}
-            alt={tech.name}
-            className="w-7 h-7"
-            onError={() => setImgError(true)}
-          />
-        )}
-      </div>
-      <span className="text-sm font-medium text-gray-900">{tech.name}</span>
-    </motion.div>
-  );
-}
 
 export default function Services() {
   const services = [
     {
       icon: Code,
       title: 'AI-Integrated Application Engineering',
-      description: 'Traditional applications are no longer enough. We build applications with AI embedded from the ground up — not as an afterthought. Agentic UX on the front end and agentic workflows beneath: human-in-the-loop decision points, agent handoff and orchestration, and multi-agent pipelines across .NET, Java, Python, and Node.js. The application and the intelligence are one system.',
+      description: 'Traditional applications are no longer enough. We build applications with AI embedded from the ground up — not as an afterthought. Agentic UX on the front end and agentic workflows beneath: human-in-the-loop decision points, agent handoff and orchestration, and multi-agent pipelines across .NET, Java, Python, and Node.js. We create context-aware experiences with agentic AI and copilot capabilities so users get the right assistance at the right moment. The application and the intelligence are one system.',
       features: [
         'AI embedded from day one, not retrofitted',
         'Agentic UX and agentic workflows',
@@ -77,7 +28,7 @@ export default function Services() {
     {
       icon: Brain,
       title: 'Agentic AI',
-      description: 'Enterprise-grade AI systems built on Microsoft Semantic Kernel, AutoGen, CrewAI, and LangGraph. Agents that work securely. We specialize in the defining challenge: data spillage. Federated agents with cross-organizational security controls, OAuth and OIDC at the agent level, and zero-trust principles from day one. We also assess business processes, identify where AI creates genuine leverage, and build solutions tailored to that reality — not off-the-shelf toolkits dressed up as strategy.',
+      description: 'Enterprise-grade AI systems built on frameworks like Microsoft Semantic Kernel, AutoGen, CrewAI, and LangGraph. Agents that don\'t just work — they work securely. We specialize in the defining challenge: data spillage. Federated agents with cross-organizational security controls, OAuth and OIDC at the agent level, and zero-trust principles from day one. We also assess business processes, identify where AI creates genuine leverage, and build solutions tailored to that reality — not off-the-shelf toolkits dressed up as strategy.',
       features: [
         'Semantic Kernel, AutoGen, CrewAI, LangGraph',
         'Federated agents and data spillage prevention',
@@ -104,7 +55,7 @@ export default function Services() {
     },
     {
       icon: Cloud,
-      title: 'Infrastructure',
+      title: 'Cloud Infrastructure',
       description: 'Cloud-native foundations built on Kubernetes, with GitOps-driven delivery through Flux and ArgoCD. Deployed across Azure, AWS, and GCP — or hybrid where the architecture demands it. Repeatable, auditable, production-grade.',
       features: [
         'Kubernetes-based cloud-native foundations',
@@ -247,30 +198,6 @@ export default function Services() {
                   </div>
                 )}
               </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Technologies */}
-      <section className="py-20 section-dark text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold mb-6 text-white">Technologies We Master</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Cutting-edge tools and platforms that power our innovative solutions
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            {techList.map((tech, index) => (
-              <TechIcon key={tech.name} tech={tech} index={index} />
             ))}
           </div>
         </div>
