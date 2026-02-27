@@ -50,21 +50,19 @@ const techGroups: TechGroup[] = [
     techs: [
       {
         name: 'Semantic Kernel',
-        slug: 'microsoftazure',
+        slug: 'semantickernel',
         color: '00A4EF',
         description: 'Agent orchestration',
         fallbackIcon: Bot,
-        iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg',
       },
       { name: 'AWS Bedrock', slug: 'amazonwebservices', color: 'FF9900', description: 'Managed LLMs', fallbackIcon: Cloud },
       { name: 'LangGraph', slug: 'langchain', color: '1C3C3C', description: 'Agent graphs', fallbackIcon: Workflow },
       {
         name: 'AutoGen',
-        slug: 'microsoftazure',
+        slug: 'autogen',
         color: '00A4EF',
         description: 'Multi-agent',
         fallbackIcon: GitBranch,
-        iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg',
       },
       { name: 'CrewAI', slug: 'crewai', color: 'F5A623', description: 'Agent crews', fallbackIcon: Zap },
       {
