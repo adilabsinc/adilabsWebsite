@@ -103,18 +103,17 @@ export default function Contact() {
 
   return (
     <div className="pt-16">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-sky-900 via-sky-800 to-sky-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Hero Section - same dark theme as Home */}
+      <section className="py-20 page-hero-dark text-white relative overflow-hidden">
+        <div className="absolute inset-0 z-0 page-hero-glow" aria-hidden />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-sky-400 to-sky-300 bg-clip-text text-transparent">
-                Get In Touch
-              </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white" style={{ fontFamily: "'Inter', sans-serif", letterSpacing: '-0.02em' }}>
+              Get In Touch
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Ready to revolutionize your business with our technology solutions? 
@@ -125,7 +124,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-20 section-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
@@ -135,16 +134,16 @@ export default function Contact() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Send us a Message</h2>
+              <h2 className="text-3xl font-bold mb-8 text-white">Send us a Message</h2>
               
               {isSubmitted && (
                 <motion.div
-                  className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg flex items-center space-x-3"
+                  className="mb-6 p-4 bg-green-900/30 border border-green-500/40 rounded-lg flex items-center space-x-3"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                 >
-                  <CheckCircle className="w-5 h-5 text-green-600" />
-                  <span className="text-green-800 dark:text-green-400">
+                  <CheckCircle className="w-5 h-5 text-green-400" />
+                  <span className="text-green-300">
                     Thank you! Your message has been sent successfully.
                   </span>
                 </motion.div>
@@ -153,13 +152,13 @@ export default function Contact() {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
                       Full Name *
                     </label>
                     <input
                       type="text"
                       {...register('name')}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-3 border border-white/20 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent bg-white/5 text-white placeholder-gray-500"
                       placeholder="Your full name"
                     />
                     {errors.name && (
@@ -168,13 +167,13 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
                       Email Address *
                     </label>
                     <input
                       type="email"
                       {...register('email')}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-3 border border-white/20 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent bg-white/5 text-white placeholder-gray-500"
                       placeholder="your@email.com"
                     />
                     {errors.email && (
@@ -185,13 +184,13 @@ export default function Contact() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
                       Company *
                     </label>
                     <input
                       type="text"
                       {...register('company')}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-3 border border-white/20 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent bg-white/5 text-white placeholder-gray-500"
                       placeholder="Your company name"
                     />
                     {errors.company && (
@@ -200,26 +199,26 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
                       Phone Number
                     </label>
                     <input
                       type="tel"
                       {...register('phone')}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-3 border border-white/20 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent bg-white/5 text-white placeholder-gray-500"
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
                     Subject *
                   </label>
                   <input
                     type="text"
                     {...register('subject')}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-3 border border-white/20 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent bg-white/5 text-white placeholder-gray-500"
                     placeholder="How can we help you?"
                   />
                   {errors.subject && (
@@ -228,13 +227,13 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
                     Message *
                   </label>
                   <textarea
                     rows={6}
                     {...register('message')}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-3 border border-white/20 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent bg-white/5 text-white placeholder-gray-500"
                     placeholder="Tell us about your project and requirements..."
                   ></textarea>
                   {errors.message && (
@@ -245,7 +244,7 @@ export default function Contact() {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-sky-600 to-sky-500 text-white rounded-lg font-semibold hover:from-sky-700 hover:to-sky-600 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
+                  className="w-full px-8 py-4 bg-cyan-400 hover:bg-cyan-300 text-gray-900 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
                   whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -271,7 +270,7 @@ export default function Contact() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Contact Information</h2>
+              <h2 className="text-3xl font-bold mb-8 text-white">Contact Information</h2>
               
               <div className="space-y-6 mb-12">
                 {contactInfo.map((info, index) => (
@@ -287,13 +286,13 @@ export default function Contact() {
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                      <h3 className="text-lg font-semibold text-white mb-1">
                         {info.title}
                       </h3>
-                      <p className="text-sky-600 dark:text-sky-400 font-medium mb-1">
+                      <p className="text-sky-400 font-medium mb-1">
                         {info.details}
                       </p>
-                      <p className="text-gray-600 dark:text-gray-400 text-sm">
+                      <p className="text-gray-300 text-sm">
                         {info.description}
                       </p>
                     </div>
@@ -302,22 +301,22 @@ export default function Contact() {
               </div>
 
               {/* Quick Actions */}
-              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Quick Actions</h3>
+              <div className="section-dark-card p-6 rounded-xl">
+                <h3 className="text-xl font-semibold mb-4 text-white">Quick Actions</h3>
                 <div className="space-y-3">
                   <Link href="/contact">
-                    <button className="w-full flex items-center space-x-3 p-3 bg-white dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
-                      <MessageCircle className="w-5 h-5 text-sky-600" />
-                      <span className="text-gray-900 dark:text-white">Schedule a Demo</span>
+                    <button className="w-full flex items-center space-x-3 p-3 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors text-left">
+                      <MessageCircle className="w-5 h-5 text-sky-400" />
+                      <span className="text-white">Schedule a Demo</span>
                     </button>
                   </Link>
-                  <button className="w-full flex items-center space-x-3 p-3 bg-white dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
-                    <Users className="w-5 h-5 text-green-600" />
-                    <span className="text-gray-900 dark:text-white">Consultation Call</span>
+                  <button className="w-full flex items-center space-x-3 p-3 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors text-left">
+                    <Users className="w-5 h-5 text-green-400" />
+                    <span className="text-white">Consultation Call</span>
                   </button>
-                  <button className="w-full flex items-center space-x-3 p-3 bg-white dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
-                    <Building2 className="w-5 h-5 text-sky-600" />
-                    <span className="text-gray-900 dark:text-white">Enterprise Inquiry</span>
+                  <button className="w-full flex items-center space-x-3 p-3 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors text-left">
+                    <Building2 className="w-5 h-5 text-sky-400" />
+                    <span className="text-white">Enterprise Inquiry</span>
                   </button>
                 </div>
               </div>
@@ -327,7 +326,7 @@ export default function Contact() {
       </section>
 
       {/* Office Locations */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20 section-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -336,8 +335,8 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Our Global Presence</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6 text-white">Our Global Presence</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               With offices around the world, we're here to serve you locally
             </p>
           </motion.div>
@@ -346,26 +345,26 @@ export default function Contact() {
             {offices.map((office, index) => (
               <motion.div
                 key={office.city}
-                className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg text-center"
+                className="section-dark-card p-8 rounded-xl text-center"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-sky-600 to-sky-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-sky-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6">
                   <MapPin className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
+                <h3 className="text-2xl font-bold mb-2 text-white">
                   {office.city}
                 </h3>
-                <p className="text-sky-600 dark:text-sky-400 font-medium mb-4">
+                <p className="text-sky-400 font-medium mb-4">
                   {office.country}
                 </p>
-                <p className="text-gray-600 dark:text-gray-400 mb-3">
+                <p className="text-gray-300 mb-3">
                   {office.address}
                 </p>
-                {/* <p className="text-gray-900 dark:text-white font-medium">
+                {/* <p className="text-white font-medium">
                   {office.phone}
                 </p> */}
               </motion.div>
@@ -375,7 +374,7 @@ export default function Contact() {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-20 section-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-12"
@@ -384,10 +383,10 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Find Us</h2>
+            <h2 className="text-4xl font-bold mb-6 text-white">Find Us</h2>
           </motion.div>
           <motion.div
-            className="bg-gray-200 dark:bg-gray-700 h-96 rounded-xl flex items-center justify-center"
+            className="bg-white/5 border border-white/10 h-96 rounded-xl flex items-center justify-center overflow-hidden"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}

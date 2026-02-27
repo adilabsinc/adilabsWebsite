@@ -1,425 +1,317 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'wouter';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Brain, 
   Cloud, 
-  Shield, 
-  Zap, 
   ArrowRight, 
-  CheckCircle,
-  Building2,
-  Users,
-  TrendingUp,
-  Cpu,
   Database,
-  Settings
+  Settings,
+  Zap,
+  CalendarCheck,
+  Briefcase,
+  Handshake,
+  Cpu,
+  Clock,
+  FileSearch,
+  Building2,
+  ShieldAlert
 } from 'lucide-react';
 import CountUp from 'react-countup';
 
+const heroTaglines = [
+  'Rapid Innovation Quality Delivery',
+  'What transformation can we power for you?',
+  'Governed. Secured. Enterprise-scale.',
+  'Production-ready AI platforms.'
+];
+
 export default function Home() {
-  const [typedText, setTypedText] = useState('');
-  const fullText = 'Revolutionizing Businesses with AI Solutions';
+  const [taglineIndex, setTaglineIndex] = useState(0);
 
   useEffect(() => {
-    let index = 0;
-    const timer = setInterval(() => {
-      if (index <= fullText.length) {
-        setTypedText(fullText.slice(0, index));
-        index++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 100);
-
-    return () => clearInterval(timer);
+    const interval = setInterval(() => {
+      setTaglineIndex((prev) => (prev + 1) % heroTaglines.length);
+    }, 3500);
+    return () => clearInterval(interval);
   }, []);
 
-  const stats = [
-    { number: '500+', label: 'Projects Delivered' },
-    { number: '98%', label: 'Client Satisfaction' },
-    { number: '50+', label: 'Enterprise Clients' },
-    { number: '24/7', label: 'Support Available' }
+  const counterStats = [
+    { number: 14, suffix: '+', label: 'Years of Experience', icon: CalendarCheck },
+    { number: 3, suffix: '+', label: 'Industries Served', icon: Briefcase },
+    { number: 3, suffix: '+', label: 'Strategic Partners', icon: Handshake },
+    { number: 100, suffix: '+', label: 'Technologies Supported', icon: Cpu }
   ];
 
-  const features = [
+  const services = [
     {
       icon: Brain,
-      title: 'AI Agentic Models',
-      description: 'Pre-configured AI models tailored for industry-specific tasks and workflows'
-    },
-    {
-      icon: Cloud,
-      title: 'Cloud Infrastructure',
-      description: 'Scalable Kubernetes orchestration and cloud-native solutions'
-    },
-    {
-      icon: Shield,
-      title: 'Cybersecurity',
-      description: 'Advanced security measures and risk mitigation strategies'
+      title: 'Agentic AI',
+      description: 'Enterprise-grade AI on Semantic Kernel, AutoGen, CrewAI, LangGraph. Federated agents, OAuth/OIDC at the agent level, zero-trust from day one—no data spillage.',
+      href: '/services'
     },
     {
       icon: Settings,
-      title: 'Process Automation',
-      description: 'Digital Process Automation (DPA) and Power Automate solutions'
+      title: 'AI-Integrated Application Engineering',
+      description: 'Applications with AI embedded from the ground up: agentic UX, human-in-the-loop workflows, multi-agent pipelines across .NET, Java, Python, and Node.js.',
+      href: '/services'
     },
     {
       icon: Database,
-      title: 'Data Integration',
-      description: 'Comprehensive data analysis and system integration interfaces'
+      title: 'Data & Analytics',
+      description: 'Modern cloud-native data warehouses, real-time pipelines, and analytics platforms. Databricks, Azure Synapse, Fabric, Snowflake, AWS—with Power BI and embedded AI turning raw data into decisions.',
+      href: '/services'
     },
     {
-      icon: Building2,
-      title: 'SaaS Development',
-      description: 'Custom SaaS platforms for enterprise and infrastructure companies'
+      icon: Cloud,
+      title: 'Infrastructure',
+      description: 'Cloud-native foundations on Kubernetes, GitOps with Flux and ArgoCD. Azure, AWS, GCP—or hybrid. Repeatable, auditable, production-grade.',
+      href: '/services'
     }
   ];
 
+  const products = [
+    { title: 'Timesheets (PBA)', icon: Clock, href: '/products' },
+    { title: 'LimeDocs', icon: FileSearch, href: '/products' },
+    { title: 'Bardline', icon: Building2, href: '/products' },
+    { title: 'Bardline Risk', icon: ShieldAlert, href: '/products' }
+  ];
   return (
     <div className="pt-16">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-sky-900 via-sky-800 to-sky-900 text-white overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img src="https://www.bisinfotech.com/wp-content/uploads/2025/05/NTT-DATA-Launches-Smart-AI-Agent-Ecosystem-Initiative.jpg" alt="Tech Background" className="w-full h-full object-cover object-center opacity-60 blur-sm" />
-          {/* Dark overlay for better readability */}
-          <div className="absolute inset-0 bg-black/60"></div>
-        </div>
-        <div className="absolute inset-0 tech-pattern opacity-10"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Hero Section - RADcube style */}
+      <section className="relative min-h-screen flex items-center overflow-hidden hero-radcube-bg">
+        <div className="absolute inset-0 z-0 hero-radcube-glow" />
+        <div className="absolute inset-0 z-0 hero-radcube-lines" />
+        <div className="absolute inset-0 z-0 hero-radcube-dots" />
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            className="max-w-3xl"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h1 className="flex flex-wrap items-baseline justify-center gap-x-3 gap-y-2 mb-6">
-              <motion.span
-                initial={{ opacity: 0, y: 28, letterSpacing: '-0.08em' }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  letterSpacing: '-0.02em'
-                }}
-                transition={{
-                  opacity: { duration: 0.5, delay: 0.1 },
-                  y: { duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] },
-                  letterSpacing: { duration: 1, delay: 0.25, ease: [0.22, 1, 0.36, 1] }
-                }}
-                className="inline-block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white"
-                style={{
-                  fontFamily: "'Syne', sans-serif",
-                  textShadow: '0 0 0 transparent, 0 2px 24px rgba(0,0,0,0.2), 0 0 80px rgba(56, 189, 248, 0.18)'
-                }}
-              >
-                ADILABS
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, scale: 0.88, letterSpacing: '0.2em' }}
-                animate={{ opacity: 1, scale: 1, letterSpacing: '0.08em' }}
-                transition={{
-                  duration: 0.55,
-                  delay: 0.35,
-                  ease: [0.22, 1, 0.36, 1]
-                }}
-                className="inline-flex items-center px-4 py-1.5 md:px-5 md:py-2 rounded-full text-lg sm:text-xl md:text-2xl font-bold tracking-wide text-white bg-white/15 backdrop-blur-md border border-white/25 shadow-[0_4px_24px_rgba(0,0,0,0.12)]"
-                style={{ fontFamily: "'Syne', sans-serif" }}
-              >
-                AI
-              </motion.span>
-            </h1>
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="mx-auto h-0.5 w-24 rounded-full bg-gradient-to-r from-transparent via-sky-400/80 to-transparent"
-              style={{ transformOrigin: 'center' }}
-            />
-            <div className="h-16 mb-8">
-              <p className="text-xl md:text-2xl text-gray-300">
-                {typedText}
-                <span className="animate-pulse">|</span>
-              </p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white text-sm md:text-base font-medium mb-6 min-h-[2.75rem]" style={{ fontFamily: "'Inter', sans-serif" }}>
+              <Zap className="w-4 h-4 text-cyan-400/80 flex-shrink-0" />
+              <span className="min-w-[200px] sm:min-w-[280px]">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={taglineIndex}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.35 }}
+                    className="block"
+                  >
+                    {heroTaglines[taglineIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
             </div>
-            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Enterprise agent solutions with embedded security—OAuth and OIDC at the agent level, federated agents, and cross-organization security controls.
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight" style={{ fontFamily: "'Inter', sans-serif", letterSpacing: '-0.02em' }}>
+              Enterprise <span className="bg-gradient-to-r from-sky-400 to-cyan-400 bg-clip-text text-transparent">AI</span> That Works— Securely, at Scale
+            </h1>
+            <p className="text-base md:text-lg text-white/90 mb-10 max-w-2xl leading-relaxed font-normal" style={{ fontFamily: "'Inter', sans-serif" }}>
+              We're an enterprise <span className="bg-gradient-to-r from-sky-400 to-cyan-400 bg-clip-text text-transparent font-semibold">AI</span> and technology services firm. We build production-ready systems across data & analytics, infrastructure, <span className="bg-gradient-to-r from-sky-400 to-cyan-400 bg-clip-text text-transparent font-semibold">AI</span>-integrated applications, and agentic <span className="bg-gradient-to-r from-sky-400 to-cyan-400 bg-clip-text text-transparent font-semibold">AI</span>—governed, secured, and built for scale.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/products">
-                <motion.button 
-                  className="px-8 py-4 bg-gradient-to-r from-sky-600 to-sky-500 rounded-lg font-semibold text-lg hover:from-sky-700 hover:to-sky-600 transition-all duration-300 flex items-center justify-center space-x-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                <motion.button
+                  className="px-8 py-4 bg-gradient-to-r from-sky-500 to-cyan-500 text-white rounded-lg font-semibold text-base hover:from-sky-400 hover:to-cyan-400 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/25"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <span>Explore Our Platform</span>
-                  <ArrowRight className="w-5 h-5" />
+                  Explore Our Platform
                 </motion.button>
               </Link>
               <Link href="/contact">
-                <motion.button 
-                  className="px-8 py-4 border-2 border-white/30 rounded-lg font-semibold text-lg hover:bg-white/10 transition-all duration-300"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                <motion.button
+                  className="px-8 py-4 border border-white/50 rounded-lg font-semibold text-base text-white hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  Get Started
+                  Get In Touch <ArrowRight className="w-4 h-4" />
                 </motion.button>
               </Link>
             </div>
-            {/* Neon Icon Cards Row (now inside hero, after buttons) */}
-            <div className="mt-12 flex flex-col items-center">
-              <div className="w-full max-w-4xl">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {[{
-                    icon: Brain,
-                    title: 'AI-Driven Insights',
-                    desc: 'Smarter decisions with real-time data'
-                  }, {
-                    icon: Zap,
-                    title: 'Instant Automation',
-                    desc: 'Boost productivity with smart workflows'
-                  }, {
-                    icon: Users,
-                    title: 'Team Collaboration',
-                    desc: 'Connect, share, and grow together'
-                  }].map((card, idx) => (
-                    <div key={idx} className="bg-gradient-to-b from-sky-800/60 to-sky-900/60 rounded-xl p-8 flex flex-col items-center shadow-xl border border-white/10 relative group">
-                      <div className="absolute -top-6 left-1/2 -translate-x-1/2 flex items-center justify-center">
-                        <div className="w-20 h-20 bg-gradient-to-tr from-sky-500 via-sky-400 to-sky-300 rounded-full flex items-center justify-center shadow-2xl ring-4 ring-sky-400/30 group-hover:scale-105 transition-transform">
-                          <card.icon className="w-12 h-12 text-white drop-shadow-lg" />
-                        </div>
-                      </div>
-                      <div className="mt-16 text-center">
-                        <div className="text-lg font-semibold text-white mb-2">{card.title}</div>
-                        <div className="text-gray-300 text-sm">{card.desc}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
           </motion.div>
         </div>
-        
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-20 animate-float">
-          <div className="w-16 h-16 bg-sky-500/20 rounded-lg backdrop-blur-sm"></div>
-        </div>
-        <div className="absolute bottom-20 right-20 animate-float" style={{ animationDelay: '1s' }}>
-          <div className="w-12 h-12 bg-sky-500/20 rounded-full backdrop-blur-sm"></div>
+      </section>
+
+      {/* Counter Stats - just below hero */}
+      <section className="relative py-16 hero-radcube-bg border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+            {counterStats.map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <motion.div
+                  key={stat.label}
+                  className="flex flex-col items-center text-center"
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.06 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="w-14 h-14 rounded-full border border-white/15 bg-white/[0.03] flex items-center justify-center mb-5">
+                    <Icon className="w-6 h-6 text-gray-400" strokeWidth={1.5} />
+                  </div>
+                  <div className="text-2xl md:text-3xl font-semibold text-white tabular-nums mb-1">
+                    <CountUp
+                      key={stat.label}
+                      end={stat.number}
+                      duration={4.5}
+                      suffix={stat.suffix}
+                    />
+                  </div>
+                  <div className="text-xs md:text-sm text-gray-500 font-medium tracking-wide uppercase">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* Who We Are Section */}
-      <section className="relative py-20 bg-[#181828] border-t-4 border-sky-500">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
-          {/* Left: Icon + Text + Image */}
-          <div className="flex-1 flex flex-col gap-6">
-            <div className="flex items-center gap-4 mb-2">
-              <div className="w-12 h-12 bg-gradient-to-tr from-sky-500 to-sky-400 rounded-full flex items-center justify-center shadow-lg">
-                <Brain className="w-7 h-7 text-white" />
-              </div>
-              <span className="uppercase tracking-widest text-xs text-gray-300 font-semibold"> | Who We Are</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              We are a <span className="text-transparent bg-gradient-to-r from-sky-400 to-sky-300 bg-clip-text font-extrabold">group of experts</span> looking to help companies leverage technology to do more than they had ever thought possible.
-            </h2>
-            <p className="text-gray-300 text-base md:text-lg max-w-xl">
-              We do this through a number of services to provide comprehensive solutions for your business. Scroll down to read about what we can do for you.
+      {/* Services - dark theme with glowing cards */}
+      <section className="py-20 services-dark-section text-white relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-30 hero-radcube-glow" aria-hidden />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="mb-12"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-white">Services</h2>
+            <p className="text-lg text-gray-300 mb-3">
+              Integrated capabilities. Governed by design.
             </p>
-            <div className="mt-8">
-              <img src="https://plus.unsplash.com/premium_photo-1661767467261-4a4bed92a507?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dGVhbXxlbnwwfHwwfHx8MA%3D%3D" alt="Team" className="rounded-lg border-4 border-sky-500 shadow-2xl rotate-[-4deg] w-80" />
-            </div>
-          </div>
-          {/* Right: Values + Signature */}
-          <div className="flex-1 flex flex-col gap-8 items-start justify-center mt-12 md:mt-0">
-            <ul className="space-y-4 text-gray-200 text-base">
-              <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-sky-400" /> We always focus on technical excellence</li>
-              <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-sky-400" /> Wherever you're going, we bring ideas and excitement</li>
-              <li className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-sky-400" /> We're consultants, guides, and partners for brands</li>
-            </ul>
-            
-          </div>
-        </div>
-      </section>
+            <p className="text-gray-400 max-w-3xl leading-relaxed">
+              ADILABS delivers enterprise-grade capabilities unified by security, governance, and Responsible AI principles. Each capability is designed to modernize systems, operationalize AI, and scale innovation while reducing risk.
+            </p>
+          </motion.div>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-transparent">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="bg-gradient-to-r from-sky-700 to-sky-600 rounded-2xl shadow-2xl py-12 px-6 flex flex-col md:flex-row items-center justify-between gap-8">
-            {stats.map((stat, index) => (
-              <div
-                key={stat.label}
-                className={`flex-1 text-center relative group transition-transform duration-300 hover:scale-105`}
-              >
-                <div className="text-4xl md:text-5xl font-extrabold text-white mb-2 drop-shadow-lg">
-                  <CountUp
-                    end={parseInt(stat.number)}
-                    duration={2}
-                    suffix={stat.number.slice(parseInt(stat.number).toString().length)}
-                    enableScrollSpy
-                    scrollSpyOnce
-                  />
-                </div>
-                <div className="text-sky-100 text-sm md:text-base tracking-wide">{stat.label}</div>
-                {/* Vertical Divider */}
-                {index < stats.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 right-0 transform -translate-y-1/2 h-12 border-r border-white/30"></div>
-                )}
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service, index) => (
+              <Link key={service.title} href={service.href}>
+                <motion.div
+                  className="services-card h-full p-6 rounded-xl transition-all duration-300 group flex flex-col"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="services-card-icon w-14 h-14 rounded-xl flex items-center justify-center mb-5">
+                    <service.icon className="w-7 h-7 text-sky-300" />
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-sky-300 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-gray-400 leading-relaxed flex-1">
+                    {service.description}
+                  </p>
+                  <span className="inline-flex items-center mt-4 text-sm font-medium text-sky-400 group-hover:text-sky-300 transition-colors">
+                    Learn more
+                    <span className="ml-2 w-8 h-8 rounded-full border border-sky-400/50 flex items-center justify-center group-hover:border-sky-300 group-hover:bg-sky-500/10 transition-colors">
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </span>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-gray-100 dark:bg-[#232336]">
-        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Product Suite - dark theme, compact cards with icons */}
+      <section className="py-20 products-suite-section text-white relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-20 hero-radcube-glow" aria-hidden />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
+            className="mb-12"
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-sky-600 to-sky-500 bg-clip-text text-transparent">
-              Our Solutions & Capabilities
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Comprehensive technology solutions designed to transform your business operations
+            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-white">ADILABS Products & Platform</h2>
+            <p className="text-lg text-gray-400 mb-3">
+              From governed innovation to production-ready platforms.
             </p>
+            <p className="text-gray-400 max-w-3xl leading-relaxed mb-6">
+              Every ADILABS product—Timesheets (PBA), LimeDocs, Bardline, and Bardline Risk—is engineered to be enterprise-ready from day one: stress-tested, secured, and governed. We'd welcome the opportunity to walk you through a live demo.
+            </p>
+            <Link href="/products">
+              <motion.button
+                className="px-6 py-3 bg-cyan-400 hover:bg-cyan-300 text-gray-900 rounded-lg font-semibold transition-colors inline-flex items-center gap-2"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Explore Our Platform <ArrowRight className="w-4 h-4" />
+              </motion.button>
+            </Link>
           </motion.div>
 
-          {/* Horizontal Scrolling Features */}
-          <div
-            className="relative overflow-hidden"
-            style={{ maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)' }}
-          >
-            <motion.div
-              className="flex gap-8 items-stretch w-max animate-none"
-              style={{
-                willChange: 'transform',
-                cursor: 'grab',
-              }}
-              animate={{ x: [0, -((features.length) * 340)] }}
-              transition={{
-                repeat: Infinity,
-                repeatType: 'loop',
-                duration: 24,
-                ease: 'linear',
-              }}
-              whileHover={{
-                transition: { duration: 0 },
-                animationPlayState: 'paused',
-              }}
-            >
-              {[...features, ...features].map((feature, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            {products.map((product, index) => (
+              <Link key={product.title} href={product.href}>
                 <motion.div
-                  key={feature.title + index}
-                  className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 min-w-[320px] max-w-xs flex flex-col items-center justify-center border border-gray-200 dark:border-gray-800"
-                  whileHover={{ y: -8, scale: 1.03 }}
+                  className={`product-suite-card p-6 rounded-xl flex flex-col group ${index === 2 ? 'product-suite-card-highlight' : ''}`}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  viewport={{ once: true }}
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-sky-600 to-sky-500 rounded-lg flex items-center justify-center mb-6">
-                    <feature.icon className="w-6 h-6 text-white" />
+                  <div className="w-14 h-14 rounded-xl bg-sky-500/20 flex items-center justify-center mb-4 group-hover:bg-sky-500/30 transition-colors">
+                    <product.icon className="w-7 h-7 text-sky-300" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white text-center">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-center">
-                    {feature.description}
-                  </p>
+                  <div className="flex items-center justify-between gap-2 mt-auto">
+                    <h3 className="text-base font-bold text-white group-hover:text-sky-300 transition-colors">{product.title}</h3>
+                    <span className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center flex-shrink-0 group-hover:border-sky-400 group-hover:bg-sky-500/20 transition-colors">
+                      <ArrowRight className="w-4 h-4 text-white" />
+                    </span>
+                  </div>
                 </motion.div>
-              ))}
-            </motion.div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Product Showcase */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      {/* Trusted by Industry Leaders - dark section, logos on white */}
+      <section className="py-20 bg-[#0c1222] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-                Enterprise SaaS Application
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-                Tailored for large civil and infrastructure companies in metro and railway sectors.
-              </p>
-              <div className="space-y-4">
-                {[
-                  'AI agentic models pre-configured for industry tasks',
-                  'CBS (Cost Breakdown Structure) Reports',
-                  'Automated Purchase Orders & Change Orders',
-                  'Labor, Equipment, and Material Tracking',
-                  'Role-based approval systems',
-                  'AI assistant embedded across workflows'
-                ].map((feature, index) => (
-                  <motion.div
-                    key={feature}
-                    className="flex items-center space-x-3"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700 dark:text-gray-300">{feature}</span>
-                  </motion.div>
-                ))}
-              </div>
-              <Link href="/products">
-                <motion.button 
-                  className="mt-8 px-8 py-4 bg-gradient-to-r from-sky-600 to-sky-500 text-white rounded-lg font-semibold hover:from-sky-700 hover:to-sky-600 transition-all duration-300 flex items-center space-x-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span>Learn More</span>
-                  <ArrowRight className="w-5 h-5" />
-                </motion.button>
-              </Link>
-            </motion.div>
-
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <div className="bg-gradient-to-br from-sky-500 to-sky-600 rounded-2xl p-8 text-white">
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    </div>
-                    <Cpu className="w-6 h-6" />
-                  </div>
-                  <div className="space-y-4">
-                    <div className="h-4 bg-white/20 rounded-full">
-                      <div className="h-4 bg-white/40 rounded-full w-3/4"></div>
-                    </div>
-                    <div className="h-4 bg-white/20 rounded-full">
-                      <div className="h-4 bg-white/40 rounded-full w-1/2"></div>
-                    </div>
-                    <div className="h-4 bg-white/20 rounded-full">
-                      <div className="h-4 bg-white/40 rounded-full w-5/6"></div>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center pt-4">
-                    <span className="text-sm opacity-80">AI Processing...</span>
-                    <TrendingUp className="w-5 h-5" />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Trusted by Industry Leaders</h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              We work closely with technology and service partners who share our commitment to quality, innovation, and long-term value creation.
+            </p>
+          </motion.div>
+          <motion.div
+            className="flex flex-wrap items-center justify-center gap-6 md:gap-10 lg:gap-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="rounded-xl bg-white p-5 md:p-6 flex items-center justify-center min-h-[80px] shadow-sm hover:shadow-md transition-shadow">
+              <img src="/t_500x300%20(1).jpg" alt="Trusted client" className="h-10 md:h-12 w-auto object-contain max-w-[140px]" />
+            </div>
+            <div className="rounded-xl bg-white p-5 md:p-6 flex items-center justify-center min-h-[80px] shadow-sm hover:shadow-md transition-shadow">
+              <img src="/t_500x300.jpg" alt="Trusted client" className="h-10 md:h-12 w-auto object-contain max-w-[140px]" />
+            </div>
+            <div className="rounded-xl bg-white p-5 md:p-6 flex items-center justify-center min-h-[80px] shadow-sm hover:shadow-md transition-shadow">
+              <img src="/onxpress-logo.svg" alt="OnExpress" className="h-10 md:h-12 w-auto object-contain max-w-[140px]" />
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -470,32 +362,42 @@ export default function Home() {
       </section>
       */ } 
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-sky-600 to-sky-500 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Final CTA */}
+      <section className="py-20 hero-radcube-bg text-white relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-25 hero-radcube-glow" aria-hidden />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to Transform Your Business?
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
+              Let's Build What's Next Together
             </h2>
-            <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Join the revolution of tech empowerment. Let us help you harness the power of AI, 
-              blockchain, and cloud technologies to drive your business forward.
+            <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+              Ready to accelerate digital transformation with AI you can trust?
             </p>
-            <Link href="/contact">
-              <motion.button 
-                className="px-8 py-4 bg-white text-sky-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 flex items-center justify-center space-x-2 mx-auto"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span>Start Your Journey</span>
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact">
+                <motion.button 
+                  className="px-8 py-4 bg-cyan-400 hover:bg-cyan-300 text-gray-900 rounded-lg font-semibold text-lg transition-all duration-300 inline-flex items-center justify-center gap-2"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Schedule a Demo <ArrowRight className="w-5 h-5" />
+                </motion.button>
+              </Link>
+              <Link href="/products">
+                <motion.button 
+                  className="px-8 py-4 border-2 border-white/50 rounded-lg font-semibold text-lg text-white hover:bg-white/10 transition-all duration-300 inline-flex items-center justify-center gap-2"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Explore Our Platform <ArrowRight className="w-5 h-5" />
+                </motion.button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

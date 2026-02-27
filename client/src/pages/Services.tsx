@@ -31,7 +31,7 @@ function TechIcon({ tech, index }: { tech: (typeof techList)[0]; index: number }
   const FallbackIcon = tech.fallbackIcon;
   return (
     <motion.div
-      className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300"
+      className="bg-white p-6 rounded-xl text-center transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100"
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, delay: index * 0.05 }}
@@ -39,7 +39,7 @@ function TechIcon({ tech, index }: { tech: (typeof techList)[0]; index: number }
       whileHover={{ y: -5 }}
     >
       <div
-        className="w-12 h-12 rounded-lg mx-auto mb-3 flex items-center justify-center bg-white dark:bg-gray-700/50 shadow-inner"
+        className="w-12 h-12 rounded-lg mx-auto mb-3 flex items-center justify-center bg-gray-50"
         style={FallbackIcon && imgError ? { backgroundColor: `#${tech.color}` } : undefined}
       >
         {FallbackIcon && imgError ? (
@@ -53,7 +53,7 @@ function TechIcon({ tech, index }: { tech: (typeof techList)[0]; index: number }
           />
         )}
       </div>
-      <span className="text-sm font-medium text-gray-900 dark:text-white">{tech.name}</span>
+      <span className="text-sm font-medium text-gray-900">{tech.name}</span>
     </motion.div>
   );
 }
@@ -143,18 +143,17 @@ export default function Services() {
 
   return (
     <div className="pt-16">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-sky-900 via-sky-800 to-sky-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Hero Section - same dark theme as Home */}
+      <section className="py-20 page-hero-dark text-white relative overflow-hidden">
+        <div className="absolute inset-0 z-0 page-hero-glow" aria-hidden />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-sky-400 to-sky-300 bg-clip-text text-transparent">
-                Our Services
-              </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white" style={{ fontFamily: "'Inter', sans-serif", letterSpacing: '-0.02em' }}>
+              Our Services
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Comprehensive technology solutions designed to transform your business operations 
@@ -165,13 +164,13 @@ export default function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-20 section-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
-                className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300"
+                className="section-dark-card rounded-2xl p-8 transition-all duration-300"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -182,19 +181,19 @@ export default function Services() {
                   <service.icon className="w-8 h-8 text-white" />
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                <h3 className="text-2xl font-bold mb-4 text-white">
                   {service.title}
                 </h3>
                 
-                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                <p className="text-gray-300 mb-6">
                   {service.description}
                 </p>
                 
                 <ul className="space-y-3">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                      <CheckCircle className="w-5 h-5 text-sky-400 flex-shrink-0" />
+                      <span className="text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -205,7 +204,7 @@ export default function Services() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20 section-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -214,8 +213,8 @@ export default function Services() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Our Process</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6 text-white">Our Process</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               A proven methodology that ensures successful project delivery and lasting results
             </p>
           </motion.div>
@@ -230,21 +229,21 @@ export default function Services() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-sky-600 to-sky-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="section-dark-card p-6 rounded-xl text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-sky-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold text-white">{step.step}</span>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+                  <h3 className="text-xl font-semibold mb-3 text-white">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-300">
                     {step.description}
                   </p>
                 </div>
                 
                 {index < process.length - 1 && (
                   <div className="hidden lg:block absolute top-8 -right-4 z-10">
-                    <ArrowRight className="w-8 h-8 text-sky-600" />
+                    <ArrowRight className="w-8 h-8 text-sky-400" />
                   </div>
                 )}
               </motion.div>
@@ -254,7 +253,7 @@ export default function Services() {
       </section>
 
       {/* Technologies */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-20 section-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -263,8 +262,8 @@ export default function Services() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Technologies We Master</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6 text-white">Technologies We Master</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Cutting-edge tools and platforms that power our innovative solutions
             </p>
           </motion.div>
@@ -277,22 +276,23 @@ export default function Services() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-sky-600 to-sky-500 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* CTA - same dark theme as Home */}
+      <section className="py-20 page-hero-dark text-white relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-25 page-hero-glow" aria-hidden />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
-            <p className="text-xl mb-8 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6 text-white">Ready to Get Started?</h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               Let's discuss how our services can transform your business and drive growth.
             </p>
             <Link href="/contact">
               <motion.button 
-                className="px-8 py-4 bg-white text-sky-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2"
+                className="px-8 py-4 bg-cyan-400 hover:bg-cyan-300 text-gray-900 rounded-lg font-semibold text-lg transition-all duration-300 inline-flex items-center space-x-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

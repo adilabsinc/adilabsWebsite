@@ -47,7 +47,7 @@ export default function Products() {
     },
     {
       icon: Building2,
-      title: 'BardLime',
+      title: 'Bardline',
       tag: 'Construction & Capital',
       tagColor: 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300',
       description: 'Construction and capital project control powered by AI. Estimate-to-complete, field reporting, change management, and cost forecasting in one platform that learns from your projects.',
@@ -62,7 +62,7 @@ export default function Products() {
     },
     {
       icon: ShieldAlert,
-      title: 'BardLime Risk',
+      title: 'Bardline Risk',
       tag: 'Risk & Safety',
       tagColor: 'bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300',
       description: 'Risk and safety intelligence for capital projects. AI-assisted hazard ID, risk scoring, and mitigation with full audit trails and compliance—from site-level to enterprise risk posture.',
@@ -71,7 +71,7 @@ export default function Products() {
         'Risk scoring & prioritization',
         'Safety observations & incidents',
         'Compliance & audit reporting',
-        'BardLime & third-party integration',
+        'Bardline & third-party integration',
         'Predictive risk analytics'
       ]
     }
@@ -102,19 +102,18 @@ export default function Products() {
 
   return (
     <div className="pt-16">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-sky-900 via-sky-800 to-sky-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section - same dark theme as Home */}
+      <section className="py-20 page-hero-dark text-white relative overflow-hidden">
+        <div className="absolute inset-0 z-0 page-hero-glow" aria-hidden />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-sky-400 to-sky-300 bg-clip-text text-transparent">
-                  Enterprise SaaS Platform
-                </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white" style={{ fontFamily: "'Inter', sans-serif", letterSpacing: '-0.02em' }}>
+                Enterprise SaaS Platform
               </h1>
               <p className="text-xl text-gray-300 mb-8">
                 Tailored for large civil and infrastructure companies, especially in metro and railway sectors. 
@@ -123,7 +122,7 @@ export default function Products() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact">
                   <motion.button 
-                    className="px-8 py-4 bg-gradient-to-r from-sky-600 to-sky-500 rounded-lg font-semibold hover:from-sky-700 hover:to-sky-600 transition-all duration-300 flex items-center justify-center space-x-2"
+                    className="px-8 py-4 bg-cyan-400 hover:bg-cyan-300 text-gray-900 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -132,7 +131,7 @@ export default function Products() {
                   </motion.button>
                 </Link>
                 <motion.button 
-                  className="px-8 py-4 border-2 border-white/30 rounded-lg font-semibold hover:bg-white/10 transition-all duration-300"
+                  className="px-8 py-4 border-2 border-white/50 rounded-lg font-semibold text-white hover:bg-white/10 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -147,7 +146,7 @@ export default function Products() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8">
+              <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
                 <div className="space-y-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
@@ -188,7 +187,7 @@ export default function Products() {
       </section>
 
       {/* Platform Features */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-20 section-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -197,8 +196,8 @@ export default function Products() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Platform Features</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6 text-white">Platform Features</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Comprehensive tools designed specifically for infrastructure and civil engineering projects
             </p>
           </motion.div>
@@ -207,34 +206,34 @@ export default function Products() {
             {platformFeatures.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                className="group relative bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-xl hover:border-sky-200 dark:hover:border-sky-800 transition-all duration-300 flex flex-col"
+                className="group relative section-dark-card rounded-2xl overflow-hidden flex flex-col"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -4 }}
               >
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-500 to-sky-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="p-6 flex flex-col flex-1">
                   {feature.tag && (
                     <span className={`inline-flex w-fit px-3 py-1.5 rounded-md text-sm font-medium mb-4 ${feature.tagColor}`}>
                       {feature.tag}
                     </span>
                   )}
-                  <div className="w-12 h-12 bg-gradient-to-r from-sky-600 to-sky-500 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-sky-500/20">
+                  <div className="w-12 h-12 bg-gradient-to-r from-sky-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-sky-500/20">
                     <feature.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 leading-tight">
+                  <h3 className="text-xl font-bold text-white mb-2 leading-tight">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-4 line-clamp-3">
+                  <p className="text-gray-300 text-base leading-relaxed mb-4 line-clamp-3">
                     {feature.description}
                   </p>
                   {feature.keyPoints && feature.keyPoints.length > 0 && (
-                    <ul className="space-y-2.5 mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                    <ul className="space-y-2.5 mt-auto pt-4 border-t border-white/10">
                       {feature.keyPoints.map((point, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400">
-                          <CheckCircle className="w-4 h-4 text-sky-500 flex-shrink-0 mt-0.5" />
+                        <li key={idx} className="flex items-start gap-2.5 text-sm text-gray-300">
+                          <CheckCircle className="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5" />
                           <span className="leading-relaxed">{point}</span>
                         </li>
                       ))}
@@ -248,7 +247,7 @@ export default function Products() {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20 section-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -257,8 +256,8 @@ export default function Products() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Measurable Results</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6 text-white">Measurable Results</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Real impact on your business operations and bottom line
             </p>
           </motion.div>
@@ -267,20 +266,20 @@ export default function Products() {
             {benefits.map((benefit, index) => (
               <motion.div
                 key={benefit.title}
-                className="bg-white dark:bg-gray-900 p-8 rounded-xl text-center"
+                className="section-dark-card p-8 rounded-xl text-center"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="text-4xl font-bold text-sky-600 dark:text-sky-400 mb-4">
+                <div className="text-4xl font-bold text-sky-400 mb-4">
                   {benefit.percentage}
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+                <h3 className="text-xl font-semibold mb-3 text-white">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-gray-300">
                   {benefit.description}
                 </p>
               </motion.div>
@@ -338,7 +337,7 @@ export default function Products() {
       */}
 
       {/* Trusted by / Our Clients */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-20 section-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -347,35 +346,34 @@ export default function Products() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Trusted by Industry Leaders</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6 text-white">Trusted by Industry Leaders</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Our clients include leading organizations in infrastructure, transportation, and construction
             </p>
           </motion.div>
 
           <motion.div
-            className="flex flex-wrap items-center justify-center gap-12 md:gap-16 lg:gap-20"
+            className="flex flex-wrap items-center justify-center gap-6 md:gap-10 lg:gap-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-lg flex items-center">
-              <img src="/t_500x300%20(1).jpg" alt="Trusted client" className="h-12 md:h-14 w-auto object-contain" />
+            <div className="rounded-xl bg-white p-5 md:p-6 flex items-center justify-center min-h-[80px] shadow-sm hover:shadow-md transition-shadow">
+              <img src="/t_500x300%20(1).jpg" alt="Trusted client" className="h-10 md:h-12 w-auto object-contain max-w-[140px]" />
             </div>
-            <div className="rounded-lg flex items-center">
-              <img src="/t_500x300.jpg" alt="Trusted client" className="h-12 md:h-14 w-auto object-contain" />
+            <div className="rounded-xl bg-white p-5 md:p-6 flex items-center justify-center min-h-[80px] shadow-sm hover:shadow-md transition-shadow">
+              <img src="/t_500x300.jpg" alt="Trusted client" className="h-10 md:h-12 w-auto object-contain max-w-[140px]" />
             </div>
-            
-            <div className="rounded-lg flex items-center">
-              <img src="/onxpress-logo.svg" alt="OnExpress" className="h-12 md:h-14 w-auto object-contain" />
+            <div className="rounded-xl bg-white p-5 md:p-6 flex items-center justify-center min-h-[80px] shadow-sm hover:shadow-md transition-shadow">
+              <img src="/onxpress-logo.svg" alt="OnExpress" className="h-10 md:h-12 w-auto object-contain max-w-[140px]" />
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Implementation Timeline */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20 section-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -384,8 +382,8 @@ export default function Products() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Implementation Timeline</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6 text-white">Implementation Timeline</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Get up and running quickly with our streamlined deployment process
             </p>
           </motion.div>
@@ -405,34 +403,35 @@ export default function Products() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-sky-600 to-sky-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-sky-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <step.icon className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-sky-600 dark:text-sky-400 font-semibold mb-2">{step.phase}</div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{step.title}</h3>
+                <div className="text-sky-400 font-semibold mb-2">{step.phase}</div>
+                <h3 className="text-lg font-semibold text-white">{step.title}</h3>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-sky-600 to-sky-500 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* CTA - same dark theme as Home */}
+      <section className="py-20 page-hero-dark text-white relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-25 page-hero-glow" aria-hidden />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Operations?</h2>
-            <p className="text-xl mb-8 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6 text-white">Ready to Transform Your Operations?</h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               See how our SaaS platform can revolutionize your infrastructure projects with AI-powered automation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
                 <motion.button 
-                  className="px-8 py-4 bg-white text-sky-600 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center justify-center space-x-2"
+                  className="px-8 py-4 bg-cyan-400 hover:bg-cyan-300 text-gray-900 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -441,7 +440,7 @@ export default function Products() {
                 </motion.button>
               </Link>
               <motion.button 
-                className="px-8 py-4 border-2 border-white rounded-lg font-semibold hover:bg-white/10 transition-all duration-300"
+                className="px-8 py-4 border-2 border-white/50 rounded-lg font-semibold text-white hover:bg-white/10 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
