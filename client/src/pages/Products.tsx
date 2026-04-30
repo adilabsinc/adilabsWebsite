@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { 
   Building2, 
+  ClipboardList,
   Clock, 
   FileSearch, 
   ShieldAlert, 
@@ -15,6 +16,37 @@ import { Link } from 'wouter';
 
 export default function Products() {
   const platformFeatures = [
+    {
+      icon: Building2,
+      title: 'Bardline',
+      tag: 'Construction & Capital',
+      tagColor: 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300',
+      description: 'Construction and capital project control powered by AI. Estimate-to-complete, field reporting, change management, and cost forecasting in one platform that learns from your projects.',
+      keyPoints: [
+        'AI cost control & forecasting',
+        'Field reporting & mobile capture',
+        'Estimate-to-complete workflows',
+        'Real-time program dashboards',
+        'BIM, scheduling & ERP integration',
+        'Predictive cost & schedule alerts'
+      ]
+    },
+    {
+      icon: ClipboardList,
+      logoSrc: '/bardline-mark.svg',
+      title: 'Bardline Work Assignment Module',
+      tag: 'Scheduling & Primavera',
+      tagColor: 'bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-300',
+      description: 'Work assignment module built on Oracle Primavera P6. Standardizes how crews, roles, and resources are added to activities—guided steps, validation, and handoffs so assignment changes follow your program’s rules instead of ad hoc updates.',
+      keyPoints: [
+        'Primavera P6–centric assignment flow',
+        'Step-by-step activity assignment workflows',
+        'Resource, role & crew assignment with checks',
+        'Approval and handoff before schedule impact',
+        'Audit trail tied to activities and WBS',
+        'Aligns with Bardline program and cost views'
+      ]
+    },
     {
       icon: Clock,
       title: 'Timesheet Management',
@@ -45,21 +77,7 @@ export default function Products() {
         'RAG-powered answers with sources'
       ]
     },
-    {
-      icon: Building2,
-      title: 'Bardline',
-      tag: 'Construction & Capital',
-      tagColor: 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300',
-      description: 'Construction and capital project control powered by AI. Estimate-to-complete, field reporting, change management, and cost forecasting in one platform that learns from your projects.',
-      keyPoints: [
-        'AI cost control & forecasting',
-        'Field reporting & mobile capture',
-        'Estimate-to-complete workflows',
-        'Real-time program dashboards',
-        'BIM, scheduling & ERP integration',
-        'Predictive cost & schedule alerts'
-      ]
-    },
+    
     {
       icon: ShieldAlert,
       title: 'Bardline Risk',
@@ -154,7 +172,9 @@ export default function Products() {
                       <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                       <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                     </div>
-                    <Building2 className="w-6 h-6" />
+                    <span className="rounded-lg bg-white p-2 shadow-md" aria-hidden>
+                      <img src="/bardline-mark.svg" alt="Bardline" className="w-10 h-10 object-contain" />
+                    </span>
                   </div>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
@@ -220,8 +240,18 @@ export default function Products() {
                       {feature.tag}
                     </span>
                   )}
-                  <div className="w-12 h-12 bg-gradient-to-r from-sky-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-sky-500/20">
-                    <feature.icon className="w-6 h-6 text-white" />
+                  <div
+                    className={
+                      feature.logoSrc
+                        ? 'w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-white shadow-lg shadow-black/15'
+                        : 'w-12 h-12 bg-gradient-to-r from-sky-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-sky-500/20'
+                    }
+                  >
+                    {feature.logoSrc ? (
+                      <img src={feature.logoSrc} alt="" className="w-8 h-8 object-contain" />
+                    ) : (
+                      <feature.icon className="w-6 h-6 text-white" />
+                    )}
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2 leading-tight">
                     {feature.title}
